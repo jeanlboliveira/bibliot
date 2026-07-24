@@ -4,11 +4,11 @@
 {% block inputs %}
     <label for="email">
         <span>E-mail</span>
-        <input type="email" name="email" id="email" class="auth-input" required>
+        {{ form.username }}
     </label>
     <label for="pass">
         <span>Senha</span>
-        <input type="password" minlength='8' name="pass" id="pass" class="auth-input" required>
+        {{ form.password }}
     </label>
     <label for="show-pass">
         <span>Exibir Senha</span>

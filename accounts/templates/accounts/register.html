@@ -4,8 +4,6 @@
 {% block page_title %}
     Cadastro
 {% endblock page_title %}
-    
-
 
 
 {% block form_title %}
@@ -14,13 +12,33 @@
     
 
 {% block inputs %}
+    <label for="nome">
+        <span>Nome</span>
+        {{ form.nome }}
+        {% if form.nome.errors %}
+            <span class="erro-campo">{{ form.nome.errors.0 }}</span>
+        {% endif %}
+    </label>
     <label for="email">
         <span>E-mail</span>
-        <input type="email" name="email" id="email" class="auth-input" required>
+        {{ form.email }}
+        {% if form.email.errors %}
+            <span class="erro-campo">{{ form.email.errors.0 }}</span>
+        {% endif %}
     </label>
-    <label for="pass">
+    <label for="password1">
         <span>Senha</span>
-        <input type="password" minlength='8' name="pass" id="pass" class="auth-input" required>
+        {{ form.password1 }}
+        {% if form.password1.errors %}
+            <span class="erro-campo">{{ form.password1.errors.0 }}</span>
+        {% endif %}
+    </label>
+    <label for="password2">
+        <span>Confirmar Senha</span>
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+            <span class="erro-campo">{{ form.password2.errors.0 }}</span>
+        {% endif %}
     </label>
     <label for="show-pass">
         <span>Exibir Senha</span>
@@ -44,14 +62,17 @@
 
 {% block form_script %}
     <script>
-        const senhaInput = document.getElementById("pass");
+        const senhaInput = document.getElementById("password1");
+        const confirmarSenhaInput = document.getElementById("password2");
         const mostrarSenha = document.getElementById("show-pass");
 
         mostrarSenha.addEventListener("change", () => {
             if (mostrarSenha.checked) {
                 senhaInput.type = 'text'
+                confirmarSenhaInput.type = 'text'
             } else {
                 senhaInput.type = 'password'
+                confirmarSenhaInput.type = 'password'
             }
         })
     </script>

@@ -2,8 +2,13 @@
     <a href="{% url 'core:home' %}"><h1>LivrariaOnline.com</h1></a>
 
     <ul>
-        <li><a href="#">Conta</a></li>
+       {% if request.user.is_authenticated %}
+       <li><a href="{% url 'accounts:profile' %}">Conta</a></li>
+
+       {% else %}
+        <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
+        <li><a href="{% url 'accounts:register' %}">Criar Conta</a></li>
+       {% endif %}
         <li><a href="#">Carrinho</a></li>
-        <li><a href="#">Suporte</a></li>
     </ul>
 </header>

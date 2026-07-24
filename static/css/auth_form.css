@@ -17,6 +17,10 @@
   margin-bottom: 2rem;
 }
 
+.erro-campo{ 
+  color: red;
+}
+  
 .inputs-container {
   display: flex;
   flex-direction: column;

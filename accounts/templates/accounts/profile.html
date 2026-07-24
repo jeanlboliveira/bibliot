@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Perfil
+{% endblock %}
+
+{% block page_style %}
+  <style>
+    button {
+      color: white;
+      background-color: red;
+      padding: 1rem;
+      cursor: pointer
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="profile-container">
+    <h2>Olá 👋, {{ request.user.nome }}</h2>
+
+    {% comment %} tem que usar no form, se usar no buttom não em <a /> dá erro 405 pq a func não suporta o get {% endcomment %}
+    <form action="{% url 'accounts:logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit">logout</button>
+    </form>
+  </div>
+{% endblock %}
