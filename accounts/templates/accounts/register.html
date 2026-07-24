@@ -1,0 +1,59 @@
+{% extends 'fragments/_base_form.html' %}
+
+
+{% block page_title %}
+    Cadastro
+{% endblock page_title %}
+    
+
+
+
+{% block form_title %}
+    Cadastro
+{% endblock form_title %}
+    
+
+{% block inputs %}
+    <label for="email">
+        <span>E-mail</span>
+        <input type="email" name="email" id="email" class="auth-input" required>
+    </label>
+    <label for="pass">
+        <span>Senha</span>
+        <input type="password" minlength='8' name="pass" id="pass" class="auth-input" required>
+    </label>
+    <label for="show-pass">
+        <span>Exibir Senha</span>
+        <input type="checkbox" name="show-pass" id="show-pass" class="auth-checkbox">
+    </label>
+{% endblock inputs %}
+
+
+
+{% block form_buttons %}
+    <button type='submit'>Cadastrar</button>
+{% endblock form_buttons %}
+
+
+{% block form_links %}
+    <p>Já tem uma conta? <a href="{% url 'accounts:login' %}">Faça login!</a></p>
+{% endblock form_links %}
+    
+
+
+
+{% block form_script %}
+    <script>
+        const senhaInput = document.getElementById("pass");
+        const mostrarSenha = document.getElementById("show-pass");
+
+        mostrarSenha.addEventListener("change", () => {
+            if (mostrarSenha.checked) {
+                senhaInput.type = 'text'
+            } else {
+                senhaInput.type = 'password'
+            }
+        })
+    </script>
+{% endblock form_script %}
+    

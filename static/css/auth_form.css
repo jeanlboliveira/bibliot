@@ -1,0 +1,89 @@
+@import url('./styles.css');
+
+.auth-form {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-form h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputs-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.auth-input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #0d1321;
+}
+
+/* Label do checkbox "exibir senha" precisa de layout diferente (horizontal, não empilhado) */
+label[for="show-pass"] {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.auth-checkbox {
+  width: auto;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.buttons button {
+  padding: 0.85rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #0d1321;
+  color: #fff;
+}
+
+.buttons button:hover {
+  background-color: #1a2333;
+}
+
+/* segundo botão ("Criar Conta") com estilo secundário, pra diferenciar da ação principal */
+.buttons button:last-child {
+  background-color: transparent;
+  color: #0d1321;
+  border: 1px solid #0d1321;
+}
+
+.buttons button:last-child:hover {
+  background-color: #f7f5f0;
+}

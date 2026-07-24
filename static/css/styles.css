@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* faz o <main> "esticar" e empurrar o footer pra baixo */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    background-color: pink;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: rgb(0, 136, 255);
+    padding: 0.2rem 0;
+    
+    width: 92%;
+    margin: 1rem auto;
+
+    border-radius: 1rem;
+
+}
+
+footer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+    background-color: blueviolet;
+
+}

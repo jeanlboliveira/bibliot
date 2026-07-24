@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  {{ livro.titulo }}
+{% endblock %}
+
+{% block meta_description %}
+  {{ livro.sinopse|truncatechars:160 }}
+{% endblock %}
+
+{% block page_style %}
+  <style>
+    .livro-detail {
+      padding: 2rem 5rem;
+    }
+    
+    .grid {
+      display: flex;
+      gap: 3rem;
+    }
+    
+    .column {
+      flex: 1;
+    }
+    
+    .livro-foto img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    
+    .livro-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .livro-info .titulo {
+      margin: 0;
+    }
+    
+    .livro-info .autor {
+      text-decoration: none;
+      color: gray;
+    }
+    
+    .livro-info .preco {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .livro-info .sinopse {
+      line-height: 1.6;
+    }
+    
+    .livro-info form {
+      margin-top: 0.5rem;
+    }
+    
+    .buy-now,
+    .add-to-cart {
+      width: 100%;
+      padding: 0.75rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 0.3rem;
+    }
+    
+    .buy-now {
+      background-color: blueviolet;
+      color: white;
+    }
+    
+    .add-to-cart {
+      background-color: white;
+      border: 1px solid blueviolet;
+      color: blueviolet;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="livro-detail">
+    <div class="grid">
+      <div class="column">
+        <div class="livro-foto">
+          <img src="{{ livro.capa.url }}" alt="Capa do Livro {{ livro.titulo }}" />
+        </div>
+      </div>
+      <div class="column livro-info">
+        <h2 class="titulo">{{ livro.titulo }}</h2>
+        <a href="#" class="autor">{{ livro.autor.nome }}</a>
+        <span class="preco">R$ {{ livro.preco|floatformat:2 }}</span>
+
+        <p class="sinopse">{{ livro.sinopse }}</p>
+
+        <form action="#" method="post">
+          {% csrf_token %}
+          <button type="submit" class="buy-now">Comprar Agora</button>
+        </form>
+
+        <form action="#" method="post">
+          {% csrf_token %}
+          <button type="submit" class="add-to-cart">Adicionar ao Carrinho</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

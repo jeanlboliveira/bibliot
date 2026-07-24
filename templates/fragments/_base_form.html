@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/auth_form.css' %}">
+    <title>Livraria.com - {% block page_title %}Login{% endblock %}</title>
+        
+</head>
+<body>
+
+<main>
+    <section class="auth-form">
+
+        <h1>
+            {% block form_title %}
+                Login
+            {% endblock %}
+        </h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="inputs-container">
+                {% block inputs %}{% endblock %}
+            </div>
+
+            <div class="buttons">
+                {% block form_buttons %}
+                    <button type="submit">Entrar</button>
+                {% endblock %}
+            </div>
+
+            <div class="form_links">
+                
+                {% block form_links %}
+                    
+                {% endblock form_links %}
+                    
+            </div>
+
+        </form>
+
+    </section>
+</main>
+
+
+{% block form_script %}
+    
+{% endblock form_script %}
+    
+
+</body>
+</html>
