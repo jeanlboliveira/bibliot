@@ -27,7 +27,17 @@ class CarrinhoManager(models.Manager):
     def get_itens(self, usuario):
         return self.filter(usuario=usuario)
         
+    def diminuir_quantidade(self, usuario, livro):
+        item, update = self.update_or_create(
+            usuario=usuario,
+            livro=livro,
+        )
 
+        if not update and item.quantidade > 0:
+            item.quantidade -= 1
+            item.save()
+
+        return item
 
 class Carrinho(models.Model):
     usuario = models.ForeignKey("accounts.Usuario", verbose_name=_("Usuário"), on_delete=models.CASCADE)

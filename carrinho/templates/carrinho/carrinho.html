@@ -1,67 +1,114 @@
 {% extends 'base.html' %}
 
 {% block page_title %}
-    Carrinho
-{% endblock page_title %}
+  Carrinho
+{% endblock %}
 
 {% block page_style %}
-    <style>
-        .carrinho-content {
-            width: 100%;
-            padding: 0 1rem;
-        }
-        .item-wrapper {
-            display: flex;
-        }
-
-
-        .item {
-            border: 1px solid gray;
-            width: 100%;
-        }
-
-        .item-wrapper img {
-            height: 200px;
-        }
-    </style>
-{% endblock page_style %}
-
+  <style>
+    .carrinho-content {
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .item-wrapper {
+      display: flex;
+    }
+    
+    .item {
+      border: 1px solid gray;
+      width: 100%;
+    }
+    
+    .item-wrapper img {
+      height: 200px;
+    }
+  </style>
+{% endblock %}
 
 {% block content %}
-    <h2>Carrinho</h2>
-    <form action="{% url 'carrinho:limpar_carrinho' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Limpar Carrinho</button>
-    </form>
-    <div class="carrinho-content">
-        <ul class="items-list">
-            {% for item in items %}
-                <li class="item">
-                    <div class="item-wrapper">
-                        <img src="{{ item.livro.capa.url }}" alt="">
+  <h2>Carrinho</h2>
+  <form action="{% url 'carrinho:limpar_carrinho' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Limpar Carrinho</button>
+  </form>
+  <div class="carrinho-content">
+    <ul class="items-list">
+      {% for item in items %}
+        <li class="item">
+          <div class="item-wrapper">
+            <img src="{{ item.livro.capa.url }}" alt="" />
 
-                        <div class="item-info">
-                            <span class="item-title">{{ item.livro.titulo }}</span>
+            <div class="item-info">
+              <span class="item-title">{{ item.livro.titulo }}</span>
 
-                            <p class="item-desc">
-                                {{ item.livro.sinopse | truncatechars:50 }}
-                            </p>
+              <p class="item-desc">{{ item.livro.sinopse|truncatechars:50 }}</p>
 
-                            <p class="item-quantidade">Quantidade: {{ item.quantidade }}</p>
+              <p class="preco">
+                Total: R$ <span class="item-subtotal">{{ item.subtotal|floatformat:2 }}</span>
+              </p>
 
-                            <p class="preco">Total: R$ {{ item.subtotal | floatformat:2 }}</p>
+              <div class="quantidade" data-livro-id="{{ item.livro.id }}">
+                <button type="button" class="qntd-button btn-menos" data-url="{% url 'carrinho:diminuir_quantidade' item.livro.id %}">-</button>
 
-                        </div>
+                <input type="number" class="qntd-input" value="{{ item.quantidade }}" readonly />
 
-                        <div class="item-buttons">
-                            <form action="{% url 'carrinho:remover_item' item.livro.id %}" method="post">
-                                {% csrf_token %}
-                                <button type="submit">Remover do Carrinho</button>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endblock content %}
+                <button type="button" class="qntd-button btn-mais" data-url="{% url 'carrinho:adicionar_item' item.livro.id %}">+</button>
+              </div>
+            </div>
+
+            <div class="item-buttons">
+              <form action="{% url 'carrinho:remover_item' item.livro.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Remover do Carrinho</button>
+              </form>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block page_script %}
+    <script>
+        function getCookie(name) {
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? match[2] : null;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        function debounceEvent(fn, wait = 500) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => fn(...args), wait);
+            };
+        }
+
+        function atualizarQuantidade(url, wrapper) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                wrapper.querySelector('.qntd-input').value = data.quantidade;
+                wrapper.querySelector('.item-subtotal').textContent = data.subtotal;
+            })
+            .catch(error => console.error('Erro ao atualizar quantidade:', error));
+        }
+
+        const atualizarComDebounce = debounceEvent(atualizarQuantidade, 400);
+
+        document.querySelector('.items-list').addEventListener('click', (event) => {
+            const botao = event.target.closest('.qntd-button');
+            if (!botao) return;
+
+            const wrapper = botao.closest('.quantidade');
+            atualizarComDebounce(botao.dataset.url, wrapper);
+        });
+    </script>
+{% endblock page_script %}

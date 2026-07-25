@@ -100,7 +100,7 @@
           <button type="submit" class="buy-now">Comprar Agora</button>
         </form>
 
-        <form action="#" method="post">
+        <form action="{% url 'carrinho:adicionar_item' livro.id %}" method="post">
           {% csrf_token %}
           <button type="submit" class="add-to-cart">Adicionar ao Carrinho</button>
         </form>
