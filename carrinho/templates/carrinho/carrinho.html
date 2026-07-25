@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    Carrinho
+{% endblock page_title %}
+
+{% block page_style %}
+    <style>
+        .carrinho-content {
+            width: 100%;
+            padding: 0 1rem;
+        }
+        .item-wrapper {
+            display: flex;
+        }
+
+
+        .item {
+            border: 1px solid gray;
+            width: 100%;
+        }
+
+        .item-wrapper img {
+            height: 200px;
+        }
+    </style>
+{% endblock page_style %}
+
+
+{% block content %}
+    <h2>Carrinho</h2>
+    <form action="{% url 'carrinho:limpar_carrinho' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Limpar Carrinho</button>
+    </form>
+    <div class="carrinho-content">
+        <ul class="items-list">
+            {% for item in items %}
+                <li class="item">
+                    <div class="item-wrapper">
+                        <img src="{{ item.livro.capa.url }}" alt="">
+
+                        <div class="item-info">
+                            <span class="item-title">{{ item.livro.titulo }}</span>
+
+                            <p class="item-desc">
+                                {{ item.livro.sinopse | truncatechars:50 }}
+                            </p>
+
+                            <p class="item-quantidade">Quantidade: {{ item.quantidade }}</p>
+
+                            <p class="preco">Total: R$ {{ item.subtotal | floatformat:2 }}</p>
+
+                        </div>
+
+                        <div class="item-buttons">
+                            <form action="{% url 'carrinho:remover_item' item.livro.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Remover do Carrinho</button>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
