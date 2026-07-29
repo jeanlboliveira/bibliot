@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block page_title %}
   Carrinho
 {% endblock %}
@@ -35,7 +34,7 @@
   <div class="carrinho-content">
     <ul class="items-list">
       {% for item in items %}
-        <li class="item">
+        <li class="item0">
           <div class="item-wrapper">
             <img src="{{ item.livro.capa.url }}" alt="" />
 
@@ -45,7 +44,7 @@
               <p class="item-desc">{{ item.livro.sinopse|truncatechars:50 }}</p>
 
               <p class="preco">
-                Total: R$ <span class="item-subtotal">{{ item.subtotal|floatformat:2 }}</span>
+                Total: R$ <span class="subtotal">{{ item.subtotal|floatformat:2 }}</span>
               </p>
 
               <div class="quantidade" data-livro-id="{{ item.livro.id }}">
@@ -71,45 +70,29 @@
 {% endblock %}
 
 {% block page_script %}
-    <script>
-        function getCookie(name) {
-            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-            return match ? match[2] : null;
-        }
-        const csrftoken = getCookie('csrftoken');
-
-        function debounceEvent(fn, wait = 500) {
-            let timer;
-            return (...args) => {
-                clearTimeout(timer);
-                timer = setTimeout(() => fn(...args), wait);
-            };
-        }
-
-        function atualizarQuantidade(url, wrapper) {
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': csrftoken,
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                wrapper.querySelector('.qntd-input').value = data.quantidade;
-                wrapper.querySelector('.item-subtotal').textContent = data.subtotal;
-            })
-            .catch(error => console.error('Erro ao atualizar quantidade:', error));
-        }
-
-        const atualizarComDebounce = debounceEvent(atualizarQuantidade, 400);
-
-        document.querySelector('.items-list').addEventListener('click', (event) => {
-            const botao = event.target.closest('.qntd-button');
-            if (!botao) return;
-
-            const wrapper = botao.closest('.quantidade');
-            atualizarComDebounce(botao.dataset.url, wrapper);
-        });
-    </script>
-{% endblock page_script %}
+  {% load static %}
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>    
+    function atualizarQuantidade(url, wrapper) {
+      console.log(url)
+      fetchURL(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          wrapper.querySelector('.qntd-input').value = data.quantidade
+          wrapper.querySelector('.subtotal').textContent = data.subtotal
+        })
+        .catch((error) => console.error('Erro ao atualizar quantidade:', error))
+    }
+    
+    const atualizarComDebounce = debounceEvent(atualizarQuantidade, 200)
+    
+    document.querySelector('.items-list').addEventListener('click', (event) => {
+      const botao = event.target.closest('.qntd-button')
+      if (!botao) return
+    
+      const wrapper = botao.closest('.item-info')
+      atualizarComDebounce(botao.dataset.url, wrapper)
+    })
+  </script>
+{% endblock %}

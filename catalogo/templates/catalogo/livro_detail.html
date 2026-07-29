@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block page_title %}
   {{ livro.titulo }}
 {% endblock %}
@@ -95,16 +97,38 @@
 
         <p class="sinopse">{{ livro.sinopse }}</p>
 
-        <form action="#" method="post">
-          {% csrf_token %}
-          <button type="submit" class="buy-now">Comprar Agora</button>
-        </form>
+        <div class="livro-buttons" data-livro-id="{{ livro.id }}">
+          <button type="submit" class="button buy-now">Comprar Agora</button>
 
-        <form action="{% url 'carrinho:adicionar_item' livro.id %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="add-to-cart">Adicionar ao Carrinho</button>
-        </form>
+          <button type="submit" class="button add-to-cart" data-url="{% url 'carrinho:adicionar_item' livro.id %}">Adicionar ao Carrinho</button>
+        </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block page_script %}
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <script>
+    function adicionarItem(url) {
+      fetchURL(url)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          window.alert('Adicionado Ao Carrinho')
+        })
+        .catch((erorr) => console.error(error))
+    }
+    
+    const adicionarComDebouce = debounceEvent(adicionarItem, 200)
+    
+    document.querySelector('.livro-buttons').addEventListener('click', (event) => {
+      const botao = event.target.closest('.add-to-cart')
+    
+      if (!botao) return
+    
+      adicionarComDebouce(botao.dataset.url)
+    })
+  </script>
 {% endblock %}

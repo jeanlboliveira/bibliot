@@ -26,16 +26,12 @@ class CarrinhoManager(models.Manager):
     
     def get_itens(self, usuario):
         return self.filter(usuario=usuario)
-<<<<<<< HEAD
         
     def diminuir_quantidade(self, usuario, livro):
         item, update = self.update_or_create(
             usuario=usuario,
             livro=livro,
         )
-=======
-
->>>>>>> 3e14a74 (nothing)
 
         if not update and item.quantidade > 0:
             item.quantidade -= 1

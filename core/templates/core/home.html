@@ -118,10 +118,9 @@
                     <span>R$ {{ livro.preco }}</span>
                   </a>
 
-                  <form action="{% url 'carrinho:adicionar_item' livro.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Adicionar ao Carrinho</button>
-                  </form>
+                  <div data-livro-id="{{ livro.id }}" method="post">
+                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}">Adicionar ao Carrinho</button>
+                  </div>
                 </div>
               {% endfor %}
             </div>
@@ -130,4 +129,29 @@
       {% endfor %}
     </div>
   </div>
+{% endblock %}
+
+{% block page_script %}
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <script>
+    function adicionarItem(url) {
+      fetchURL(url)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          window.alert('Adicionado Ao Carrinho')
+        })
+        .catch((error) => console.error('Erro ao adicionar item:', error))
+    }
+    
+    const adicionarComDebouce = debounceEvent(adicionarItem, 200)
+    
+    //colocar isso numa function!!!!!!!!!!!!!!!!!!1
+    document.querySelector('.categorias-container').addEventListener('click', (event) => {
+      const botao = event.target.closest('.adicionar-item')
+      if (!botao) return
+      adicionarComDebouce(botao.dataset.url)
+    })
+  </script>
 {% endblock %}
