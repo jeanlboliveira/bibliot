@@ -33,7 +33,7 @@ class CarrinhoManager(models.Manager):
             livro=livro,
         )
 
-        if not update and item.quantidade > 0:
+        if not update and item.quantidade > 1:
             item.quantidade -= 1
             item.save()
 
