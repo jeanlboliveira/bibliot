@@ -1,0 +1,44 @@
+:root {
+  /* ===== Cores principais ===== */
+  --cor-primaria: #111827;      /* quase preto azulado, pro header/CTAs principais */
+  --cor-primaria-hover: #1f2937;
+  --cor-secundaria: #6366f1;     /* indigo moderno, accent/destaque */
+  --cor-secundaria-hover: #4f46e5;
+
+  /* ===== Neutros ===== */
+  --cor-texto: #111827;
+  --cor-texto-suave: #6b7280;
+  --cor-fundo: #f9fafb;
+  --branco: #ffffff;
+  --preto: #000000;
+  --cor-borda: #e5e7eb;
+
+  /* ===== Estado ===== */
+  --cor-erro: #dc2626;
+  --cor-sucesso: #16a34a;
+  --cor-online: #22c55e;
+
+  /* ===== Espaçamento ===== */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 3rem;
+
+  /* ===== Bordas / raio ===== */
+  --border-radius: 0.75rem;
+  --border-radius-sm: 0.375rem;
+  --border-radius-full: 9999px; /* pra elementos circulares, tipo avatar */
+
+  /* ===== Tipografia ===== */
+  --fonte-titulo: "Playfair Display", serif;
+  --fonte-corpo: "Inter", system-ui, sans-serif;
+
+  /* ===== Sombra ===== */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* ===== Transição ===== */
+  --transicao-rapida: 0.15s ease;
+  --transicao-padrao: 0.3s ease;
+}
