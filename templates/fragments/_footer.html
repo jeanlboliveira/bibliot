@@ -1,3 +1,18 @@
 <footer>
-    <p>&copy; 2026 Todos os Direitos Reservados - LivrariaOnline.com</p>
+  <div class="footer-content">
+    <div class="newsletter">
+      <h3>Fique por dentro das novidades</h3>
+      <p>Receba lançamentos, promoções e recomendações direto no seu e-mail.</p>
+
+      <form action="#" method="post" class="newsletter-form">
+        {% csrf_token %}
+        <input type="email" name="newsletter-email" placeholder="Seu e-mail" required />
+        <button type="submit">Inscrever-se</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Todos os direitos reservados - bibliot</p>
+    </div>
+  </div>
 </footer>
