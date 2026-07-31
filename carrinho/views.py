@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse
 from .models import Carrinho
 from catalogo.models import Livro
 # Create your views here.
 
+
+@login_required
 def carrinho_view(request):
     items = Carrinho.objects.get_itens(usuario=request.user)
 
@@ -17,7 +20,7 @@ def carrinho_view(request):
         context=context
     )
 
-
+@login_required
 def adicionar_item_view(request, livro_id):
     if request.method == 'POST':
         livro = get_object_or_404(Livro, id=livro_id)
@@ -36,7 +39,7 @@ def adicionar_item_view(request, livro_id):
 
     return HttpResponse(status=405)
 
-
+@login_required
 def remover_item_view(request, livro_id):
     if request.method == 'POST':
         livro = get_object_or_404(Livro, id=livro_id)
@@ -48,7 +51,7 @@ def remover_item_view(request, livro_id):
 
     return HttpResponse(status=405)
 
-
+@login_required
 def limpar_carrinho_view(request):
     if request.method == 'POST':
         Carrinho.objects.limpar_carrinho(usuario=request.user)
@@ -62,7 +65,7 @@ def limpar_carrinho_view(request):
         template_name='core/home.html'
     )
 
-
+@login_required
 def diminuir_quantidade_view(request, livro_id):
     if request.method == "POST":
         livro = get_object_or_404(Livro, id=livro_id)
