@@ -1,26 +1,8 @@
-@import url('./variables.css');
+@import url('base.css');
+@import url('variables.css');
 
-* {
-    box-sizing: border-box;
-
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-    /* faz o <main> "esticar" e empurrar o footer pra baixo */
-}
+@import url('auth.css');
+@import url('home.css');
 
 /* ===== HEADER ===== */
 
@@ -28,6 +10,13 @@ header {
   padding: var(--espaco-sm) var(--espaco-xl);
   background-color: var(--branco);
   border-bottom: 1px solid var(--cor-borda);
+
+  position: fixed;
+  width: 100vw;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  
 }
 
 .header-content {
@@ -63,6 +52,8 @@ header ul {
   width: 50%;
 }
 
+
+
 .search-area,
 .search-area form,
 .search-area button {
@@ -91,6 +82,12 @@ header ul {
 
 .search-area input::placeholder {
   color: var(--cor-texto-suave);
+    transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+#search-box.placeholder-fade::placeholder {
+  opacity: 0;
 }
 
 .search-area button {
@@ -225,6 +222,15 @@ nav ul {
 nav {
     background-color: var(--cor-primaria);
     width: 100%;
+    position: sticky;
+    top: 5rem;
+    z-index: 999;
+
+    transition: transform var(--transicao-padrao);
+}
+
+nav.nav-escondida {
+  transform: translateY(-100%);
 }
 
 nav ul {
@@ -333,3 +339,35 @@ footer {
 }
 
 /* FIM FOOTER */
+
+
+/* ===== SAC ===== */
+
+.sac {
+  height: 4rem;
+  width: 4rem;
+  position: fixed;
+  bottom: var(--espaco-lg);
+  right: var(--espaco-lg);
+  background-color: var(--cor-secundaria);
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-md);
+  z-index: 100;
+  transition: transform var(--transicao-rapida);
+}
+
+.sac:hover {
+  transform: scale(1.08);
+}
+
+.sac svg {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--branco);
+}
+
+/* ===== FIM SAC ===== */
+

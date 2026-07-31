@@ -5,9 +5,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% block meta_description %}Livraria on-line com os melhores livros e preços{% endblock %}" />
+    <meta name="description"
+      content="{% block meta_description %}
+        
+        
+        
+        
+        
+        Livraria on-line com os melhores livros e preços
+
+
+
+
+
+      {% endblock %}" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <title>Livraria - {% block page_title %}Início{% endblock %}</title>
+    <title>
+      bibliot -{% block page_title %}
+        Início
+      {% endblock %}
+    </title>
 
     {% block page_style %}
 
@@ -23,12 +40,58 @@
 
         {% endblock %}
       </section>
+
+      <a href="#">
+        <div class="sac">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M224 64c-79 0-144.7 57.3-157.7 132.7 9.3-3 19.3-4.7 29.7-4.7l16 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0c-53 0-96-43-96-96l0-64C0 100.3 100.3 0 224 0S448 100.3 448 224l0 168.1c0 66.3-53.8 120-120.1 120l-87.9-.1-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 0 40 0c39.8 0 72-32.2 72-72l0-20.9c-14.1 8.2-30.5 12.8-48 12.8l-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48l16 0c10.4 0 20.3 1.6 29.7 4.7-13-75.3-78.6-132.7-157.7-132.7z" />
+          </svg>
+        </div>
+      </a>
     </main>
 
     {% include 'fragments/_footer.html' %}
-    
-    {% block page_script %}
-    {% endblock %}
 
+    <script>
+      let ultimoScroll = 0
+      const nav = document.querySelector('nav')
+      
+      window.addEventListener('scroll', () => {
+        const scrollAtual = window.scrollY
+      
+        if (scrollAtual > ultimoScroll && scrollAtual > 200) {
+          // descendo a página (e já passou de 200px, pra não esconder logo no topo)
+          nav.classList.add('nav-escondida')
+        } else {
+          // subindo a página
+          nav.classList.remove('nav-escondida')
+        }
+      
+        ultimoScroll = scrollAtual
+      })
+    </script>
+
+    <script>
+      const sugestoes = ['Seu próximo universo está aqui', 'Busque por ISBN', 'Que tal um "Harry Potter"?', 'Procure pelo nome do autor', 'Sua próxima leitura está a um clique', 'Já leu Machado de Assis?', 'Busque por gênero: romance, ficção, poesia...', 'Digite o título do livro', 'Descubra um novo mundo hoje', 'Que tal explorar os lançamentos?', 'Procurando um clássico ou uma novidade?', "Busque por 'Clarice Lispector'", 'Toda boa história começa com uma busca', 'Encontre seu próximo capítulo favorito', 'Digite e deixe a magia acontecer']
+      
+      let indice = 0
+      const input = document.getElementById('search-box')
+      
+      setInterval(() => {
+        // 1. inicia o fade out
+        input.classList.add('placeholder-fade')
+      
+        // 2. espera a transição terminar, troca o texto, e faz o fade in
+        setTimeout(() => {
+          indice = (indice + 1) % sugestoes.length
+          input.setAttribute('placeholder', sugestoes[indice])
+          input.classList.remove('placeholder-fade')
+        }, 300) // precisa bater com a duração da transição (0.3s = 300ms)
+      }, 20000)
+    </script>
+
+    {% block page_script %}
+
+    {% endblock %}
   </body>
 </html>

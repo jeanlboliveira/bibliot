@@ -1,0 +1,98 @@
+/* ===== HOME ===== */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-lg);
+  padding: 0 var(--espaco-xl) var(--espaco-lg);
+}
+
+/* Banner */
+.banners-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Categorias */
+.categorias-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xl);
+}
+
+.categoria-titulo {
+  font-family: var(--fonte-titulo);
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-texto);
+}
+
+.livros-line {
+  display: flex;
+  gap: var(--espaco-md);
+  overflow-x: auto;
+  padding-bottom: var(--espaco-xs);
+}
+
+.livro-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+  min-width: 180px;
+  padding: var(--espaco-sm);
+  background-color: var(--branco);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--cor-borda);
+  transition: box-shadow var(--transicao-padrao);
+}
+
+.livro-card:hover {
+  box-shadow: var(--sombra-md);
+}
+
+.livro-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+}
+
+.livro-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.livro-card .titulo {
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.livro-card form {
+  margin-top: auto;
+}
+
+.livro-card button {
+  width: 100%;
+  padding: var(--espaco-xs);
+  cursor: pointer;
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--fonte-corpo);
+  transition: background-color var(--transicao-padrao);
+}
+
+.livro-card button:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+/* FIM HOME */

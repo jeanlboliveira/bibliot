@@ -1,0 +1,89 @@
+
+/* ===== AUTH (login/cadastro) ===== */
+
+.auth-form {
+  max-width: 400px;
+  margin: var(--espaco-xl) auto;
+  padding: var(--espaco-lg);
+  background-color: var(--branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--border-radius-sm);
+}
+
+.auth-form h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-lg);
+}
+
+.erro-campo {
+  color: var(--cor-erro);
+  font-size: 0.85rem;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+.inputs-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.auth-input {
+  padding: var(--espaco-xs);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-family: var(--fonte-corpo);
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+/* Label do checkbox "exibir senha" precisa de layout diferente (horizontal, não empilhado) */
+label[for="show-pass"] {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.auth-checkbox {
+  width: auto;
+}
+
+.buttons {
+  margin-top: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.buttons button {
+  padding: var(--espaco-xs);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+  font-family: var(--fonte-corpo);
+  transition: background-color var(--transicao-padrao);
+}
+
+.buttons button:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+/* FIM AUTH */
