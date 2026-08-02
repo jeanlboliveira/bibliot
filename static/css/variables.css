@@ -1,14 +1,16 @@
 :root {
   /* ===== Cores principais ===== */
-  --cor-primaria: #111827;      /* quase preto azulado, pro header/CTAs principais */
+  --cor-primaria: #111827;
   --cor-primaria-hover: #1f2937;
-  --cor-secundaria: #6366f1;     /* indigo moderno, accent/destaque */
+  --cor-secundaria: #6366f1;
   --cor-secundaria-hover: #4f46e5;
+  --cor-acento: #8b5cf6;
 
   /* ===== Neutros ===== */
   --cor-texto: #111827;
   --cor-texto-suave: #6b7280;
   --cor-fundo: #f9fafb;
+  --cor-fundo-suave: #f3f4f6;
   --branco: #ffffff;
   --preto: #000000;
   --cor-borda: #e5e7eb;
@@ -36,7 +38,8 @@
 
   /* ===== Sombra ===== */
   --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --sombra-md: 0 10px 24px rgba(17, 24, 39, 0.08);
+  --sombra-lg: 0 20px 40px rgba(17, 24, 39, 0.12);
 
   /* ===== Transição ===== */
   --transicao-rapida: 0.15s ease;

@@ -14,38 +14,67 @@
       </div>
     {% endif %} {% endcomment %}
 
-    <div class="banners-container">
-      <div class="banner">
-        <img src="{% static 'images/banner/image.png' %}" alt="banner-teste" />
+    <section class="hero-panel" aria-label="Destaques da livraria">
+      <div class="hero-media">
+        <img src="{% static 'images/banner/image.png' %}" alt="Banner editorial da livraria" />
+        <div class="hero-overlay">
+          <span class="hero-pill">Seleção editorial</span>
+          <h1>Encontre a próxima leitura que merece espaço na sua rotina.</h1>
+          <p>Romances, clássicos e novidades em um ambiente pensado para quem ama livros.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Explorar catálogo</a>
+            <a class="btn btn-secondary" href="#categorias">Ver categorias</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="categorias-container">
+    <section class="highlights-strip" aria-label="Atalhos da livraria">
+      <article>
+        <strong>Entrega rápida</strong>
+        <span>Envio seguro para todo o Brasil.</span>
+      </article>
+      <article>
+        <strong>Novidades toda semana</strong>
+        <span>Descubra lançamentos selecionados.</span>
+      </article>
+      <article>
+        <strong>Favoritos do mês</strong>
+        <span>Livros que estão conquistando leitores.</span>
+      </article>
+    </section>
+
+    <div class="categorias-container" id="categorias">
       {% for categoria in categorias %}
         {% if categoria.livros.all %}
-          <div class="categorias-wrapper">
-            <h2 class="categoria-titulo">{{ categoria.nome }}</h2>
+          <section class="categorias-wrapper" id="catalogo">
+            <div class="categoria-header">
+              <div>
+                <p class="categoria-kicker">Coleção</p>
+                <h2 class="categoria-titulo">{{ categoria.nome }}</h2>
+              </div>
+              <a href="#" class="categoria-link">Ver tudo</a>
+            </div>
 
             <div class="livros-line">
               {% for livro in categoria.livros.all %}
-                <div class="livro-card">
+                <article class="livro-card">
                   <a href="{% url 'catalogo:livro_detail' livro.slug %}">
                     <img src="{{ livro.capa.url }}" alt="capa do livro '{{ livro.titulo }}'" />
-                    <br />
-                    <span class="titulo">{{ livro.titulo }}</span>
-                    <br />
-                    <span>{{ livro.autor.nome }}</span>
-                    <br />
-                    <span>R$ {{ livro.preco }}</span>
+                    <div class="livro-info">
+                      <span class="titulo">{{ livro.titulo }}</span>
+                      <span class="autor">{{ livro.autor.nome }}</span>
+                      <span class="preco">R$ {{ livro.preco }}</span>
+                    </div>
                   </a>
 
                   <div data-livro-id="{{ livro.id }}" method="post">
                     <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}">Adicionar ao Carrinho</button>
                   </div>
-                </div>
+                </article>
               {% endfor %}
             </div>
-          </div>
+          </section>
         {% endif %}
       {% endfor %}
     </div>

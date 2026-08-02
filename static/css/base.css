@@ -1,13 +1,11 @@
 * {
     box-sizing: border-box;
-
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
-
 }
 
 body {
@@ -16,10 +14,27 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     padding-top: 5rem;
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    background: linear-gradient(180deg, #f8fafc 0%, var(--cor-fundo) 100%);
+    line-height: 1.6;
 }
 
 main {
     flex: 1;
     position: relative;
-    /* faz o <main> "esticar" e empurrar o footer pra baixo */
+}
+
+.container {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
 }
