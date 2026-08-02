@@ -90,7 +90,7 @@
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
-          window.alert('Adicionado Ao Carrinho')
+          atualizarCarrinho(data)
         })
         .catch((error) => console.error('Erro ao adicionar item:', error))
     }

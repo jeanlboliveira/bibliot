@@ -35,6 +35,7 @@ def adicionar_item_view(request, livro_id):
         return JsonResponse({
             'quantidade': item.quantidade,
             'subtotal': f'{item.subtotal:.2f}',
+            'quantidade_total_carrinho': Carrinho.objects.filter(usuario=request.user).count(),
         })
 
     return HttpResponse(status=405)

@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from catalogo import models
+from catalogo import models as catalogo
 
 # Create your views here.
 def home_view(request):
-    categorias = models.Categoria.objects.prefetch_related("livros").filter(ativa=True) # relação many 2 many, precisa do related_name
+    categorias = catalogo.Categoria.objects.prefetch_related("livros").filter(ativa=True) # relação many 2 many, precisa do related_name
 
     context = {
-        'categorias': categorias
+        'categorias': categorias,
+
     }
 
     return render(
