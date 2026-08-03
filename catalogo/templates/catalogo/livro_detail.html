@@ -12,6 +12,55 @@
 
 {% block page_style %}
   <style>
+    /* ===== TOGGLE WISHLIST ===== */
+    
+    .toggle-container {
+      display: inline-flex;
+    }
+    
+    .toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      background-color: var(--branco);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--border-radius-full);
+      cursor: pointer;
+      transition: transform var(--transicao-rapida), border-color var(--transicao-rapida), background-color var(--transicao-rapida);
+    }
+    
+    .toggle:hover {
+      transform: scale(1.08);
+      border-color: var(--cor-erro);
+    }
+    
+    .toggle:active {
+      transform: scale(0.95);
+    }
+    
+    .toggle svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: none;
+      stroke: var(--cor-texto-suave);
+      stroke-width: 32px;
+      transition: fill var(--transicao-rapida), stroke var(--transicao-rapida);
+    }
+    
+    /* Estado ativo (favoritado) */
+    .toggle.ativo {
+      background-color: rgba(220, 38, 38, 0.08);
+      border-color: var(--cor-erro);
+    }
+    
+    .toggle.ativo svg {
+      fill: var(--cor-erro);
+      stroke: var(--cor-erro);
+    }
+    
+    /* FIM TOGGLE WISHLIST */
     .livro-detail {
       padding: 2rem 5rem;
     }
@@ -92,6 +141,13 @@
       </div>
       <div class="column livro-info">
         <h2 class="titulo">{{ livro.titulo }}</h2>
+        <div class="toggle-container" data-livro-id="{{ livro.id }}">
+          <button type="submit" class="toggle" data-url="{% url 'wishlist:toggle' livro.id %}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M241 87.1l15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7l0-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1z" />
+            </svg>
+          </button>
+        </div>
         <a href="#" class="autor">{{ livro.autor.nome }}</a>
         <span class="preco">R$ {{ livro.preco|floatformat:2 }}</span>
 
@@ -116,19 +172,36 @@
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
-          window.alert('Adicionado Ao Carrinho')
+          atualizarHeader('.carrinho', data, 'quantidade_total_carrinho')
         })
-        .catch((erorr) => console.error(error))
+        .catch((error) => console.error(error))
     }
     
-    const adicionarComDebouce = debounceEvent(adicionarItem, 200)
+    function adicionarNaWishlist(url, botao) {
+      fetchURL(url)
+        .then((response) => response.json())
+        .then((data) => {
+          botao.classList.toggle('ativo', data.na_lista)
+          atualizarHeader('.total-wishlist', data, 'quantidade_total_wishlist')
+        })
+        .catch((error) => console.error('Erro ao atualizar wishlist:', error))
+    }
+    
+    const adicionarItemComDebounce = debounceEvent(adicionarItem, 200)
+    const adicionarWishlistComDebounce = debounceEvent(adicionarNaWishlist, 200)
     
     document.querySelector('.livro-buttons').addEventListener('click', (event) => {
       const botao = event.target.closest('.add-to-cart')
-    
       if (!botao) return
     
-      adicionarComDebouce(botao.dataset.url)
+      adicionarItemComDebounce(botao.dataset.url)
+    })
+    
+    document.querySelector('.toggle-container').addEventListener('click', (event) => {
+      const botao = event.target.closest('.toggle')
+      if (!botao) return
+    
+      adicionarWishlistComDebounce(botao.dataset.url, botao)
     })
   </script>
 {% endblock %}

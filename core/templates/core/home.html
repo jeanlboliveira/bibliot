@@ -90,7 +90,7 @@
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
-          atualizarCarrinho(data)
+          atualizarHeader('.carrinho', data, 'quantidade_total_carrinho')
         })
         .catch((error) => console.error('Erro ao adicionar item:', error))
     }

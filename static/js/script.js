@@ -25,7 +25,7 @@ function debounceEvent(fn, wait = 500) {
 }
 
 
-function atualizarCarrinho(data) {
-  document.querySelector('.carrinho').textContent = data.quantidade_total_carrinho
+function atualizarHeader(query, data, key) {
+  document.querySelector(query).textContent = data[key]
 
 }

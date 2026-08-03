@@ -8,6 +8,10 @@ class ListaDeDesejosManager(models.Manager):
             usuario=usuario,
             item=livro,
         )
+
+        if not criado:
+            return self.filter(usuario=usuario, item=livro).delete()
+        
         return item
 
     def remover_item(self, usuario, livro):
