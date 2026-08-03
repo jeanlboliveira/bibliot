@@ -16,7 +16,7 @@ body {
     padding-top: 5rem;
     font-family: var(--fonte-corpo);
     color: var(--cor-texto);
-    background: linear-gradient(180deg, #f8fafc 0%, var(--cor-fundo) 100%);
+    background: linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo) 100%);
     line-height: 1.6;
 }
 

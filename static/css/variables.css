@@ -22,6 +22,17 @@
 
   /* ===== Espaçamento ===== */
   --espaco-xs: 0.5rem;
+  /* Tonalidades de erro/aviso */
+  --cor-erro-fundo: #fff1f2;
+  --cor-erro-claro: #ffe4e6;
+  --cor-erro-borda: #fecaca;
+  --cor-erro-strong: #fca5a5;
+  --cor-erro-ghost: #fef2f2;
+
+  /* Tonalidades claras da cor primária */
+  --cor-primaria-100: #eef2ff;
+  --cor-primaria-200: #e0e7ff;
+  --cor-primaria-300: #c7d2fe;
   --espaco-sm: 1rem;
   --espaco-md: 1.5rem;
   --espaco-lg: 2rem;

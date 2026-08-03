@@ -195,7 +195,7 @@
   gap: var(--espaco-xs);
   min-width: 205px;
   padding: var(--espaco-sm);
-  background: linear-gradient(180deg, var(--branco) 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, var(--branco) 0%, var(--cor-fundo) 100%);
   border-radius: 1rem;
   border: 1px solid rgba(229, 231, 235, 0.8);
   transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);

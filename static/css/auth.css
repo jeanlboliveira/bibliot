@@ -45,10 +45,21 @@
   font-family: var(--fonte-corpo);
 }
 
+/* Comentado para revisão: classe possivelmente órfã - auth-input */
+/*
+.auth-input {
+  padding: var(--espaco-xs);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  font-family: var(--fonte-corpo);
+}
+
 .auth-input:focus {
   outline: none;
   border-color: var(--cor-primaria);
 }
+*/
 
 /* Label do checkbox "exibir senha" precisa de layout diferente (horizontal, não empilhado) */
 label[for="show-pass"] {

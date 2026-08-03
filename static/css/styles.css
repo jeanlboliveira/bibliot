@@ -1,8 +1,13 @@
-@import url('base.css');
 @import url('variables.css');
+@import url('base.css');
 
-@import url('auth.css');
 @import url('home.css');
+@import url('auth.css');
+
+@import url('carrinho.css');
+@import url('catalogo.css');
+@import url('wishlist.css');
+@import url('accounts.css');
 
 /* ===== HEADER ===== */
 
@@ -305,7 +310,7 @@ nav ul {
 }
 
 nav {
-  background: linear-gradient(90deg, var(--cor-primaria) 0%, #1f2937 100%);
+  background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-primaria-hover) 100%);
   width: 100%;
   position: sticky;
   top: 5rem;
@@ -359,7 +364,7 @@ nav a:hover::after {
 /* ===== FOOTER ===== */
 
 footer {
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, #1f2937 100%);
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-hover) 100%);
   color: var(--branco);
   padding: var(--espaco-xl) var(--espaco-lg);
   margin-top: var(--espaco-xl);

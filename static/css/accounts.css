@@ -1,0 +1,7 @@
+/* CSS extraído de accounts/templates/accounts/profile.html */
+button {
+  color: var(--branco);
+  background-color: var(--cor-erro);
+  padding: 1rem;
+  cursor: pointer;
+}
