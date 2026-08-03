@@ -1,12 +1,18 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from . import models
+from lista_desejos.models import ListaDeDesejos
 
 def livro_detail_view(request, slug):
     livro = get_object_or_404(models.Livro, slug=slug)
-    # print('Livro:', livro)
+    esta_na_lista = False
+
+    if request.user.is_authenticated:
+        esta_na_lista = ListaDeDesejos.objects.esta_na_lista(request.user, livro)
+
     context = {
-        'livro': livro
+        'livro': livro,
+        'esta_na_lista': esta_na_lista,
     }
 
     return render(

@@ -25,8 +25,6 @@ def toggle_view(request, livro_id):
         usuario = request.user
         livro = get_object_or_404(Livro, id=livro_id)
 
-        print('LIVRO:', livro)
-
         ListaDeDesejos.objects.adicionar_item(usuario=usuario, livro=livro)
 
         return JsonResponse({
@@ -34,3 +32,4 @@ def toggle_view(request, livro_id):
         })
 
     return HttpResponse(status=405)
+

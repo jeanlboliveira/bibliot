@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import (
     wishlist_view,
-    toggle_view
+    toggle_view,
 )
 app_name = 'wishlist'
 
