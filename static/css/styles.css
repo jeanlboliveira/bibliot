@@ -254,7 +254,7 @@ header ul {
   bottom: 1.25rem;
   width: 3.5rem;
   height: 3.5rem;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-acento) 100%);
   display: grid;
   place-items: center;
@@ -268,12 +268,33 @@ header ul {
   box-shadow: 0 18px 30px rgba(99, 102, 241, 0.25);
 }
 
+.sac span {
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transicao-rapida), visibility var(--transicao-rapida);
+}
+
+.sac:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+
 .sac svg {
   width: 1.4rem;
   height: 1.4rem;
   fill: var(--branco);
 }
-
 /* ===== NAV ===== */
 
 nav,
