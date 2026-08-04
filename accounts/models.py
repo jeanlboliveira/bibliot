@@ -43,4 +43,37 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-    
+
+
+class Endereco(models.Model):
+    """Model definition for Endereco."""
+
+    # TODO: Define fields here
+    usuario = models.ForeignKey(
+            "accounts.Usuario",
+            on_delete=models.CASCADE,
+            related_name="enderecos",
+        )
+
+    cep = models.CharField(max_length=9)
+    estado = models.CharField(max_length=2)
+    cidade = models.CharField(max_length=50)
+    bairro = models.CharField(max_length=50)
+    rua = models.CharField(max_length=200)
+    numero = models.CharField(max_length=10)
+    complemento = models.CharField(max_length=100, blank=True)
+
+    principal = models.BooleanField(default=False)
+    referencia = models.CharField(max_length=200, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        """Meta definition for Endereco."""
+
+        verbose_name = 'Endereco'
+        verbose_name_plural = 'Enderecos'
+
+    def __str__(self):
+        """Unicode representation of Endereco."""
+        return f"{self.rua}, {self.numero} - {self.cidade}/{self.estado}"
