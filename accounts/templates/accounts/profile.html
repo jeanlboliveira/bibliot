@@ -4,32 +4,73 @@
   Perfil
 {% endblock %}
 
-{% block page_style %}{% endblock %}
-
 {% block content %}
-  <div class="profile-container">
-    <h2>Olá 👋, {{ request.user.nome }}</h2>
+  <section class="profile-page">
+    <div class="profile-hero">
+      <div>
+        <p class="profile-eyebrow">Minha conta</p>
+        <h2>Olá 👋, {{ request.user.nome }}</h2>
+        <p class="profile-subtitle">Acompanhe seus endereços e pedidos em um só lugar.</p>
+      </div>
 
-    <div class="profile-actions">
-      <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
+      <div class="profile-actions">
+        <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
 
-      {% comment %} tem que usar no form, se usar no <a />> não em button dá erro 405 pq a func não suporta o get {% endcomment %}
-      <form action="{% url 'accounts:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">logout</button>
-      </form>
+        <form action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="profile-logout">Sair</button>
+        </form>
+      </div>
     </div>
 
-    {% if enderecos %}
-      <div class="address-list">
-        {% for endereco in enderecos %}
-          <div class="address-item">
-            <strong>{{ endereco.nome_completo }}</strong>
-            <p>{{ endereco.rua }}, {{ endereco.numero }} - {{ endereco.bairro }}</p>
-            <p>{{ endereco.cidade }}/{{ endereco.estado }} · CEP {{ endereco.cep }}</p>
+    <div class="profile-grid">
+      <section class="profile-card">
+        <div class="profile-card__header">
+          <h3>Endereços</h3>
+        </div>
+
+        {% if enderecos %}
+          <div class="address-list">
+            {% for endereco in enderecos %}
+              <div class="address-item">
+                <div class="address-item__top">
+                  <strong>{{ endereco.nome_completo }}</strong>
+                  {% if endereco.principal %}
+                    <span class="address-pill">Principal</span>
+                  {% endif %}
+                </div>
+                <p>{{ endereco.rua }}, {{ endereco.numero }} - {{ endereco.bairro }}</p>
+                <p>{{ endereco.cidade }}/{{ endereco.estado }} · CEP {{ endereco.cep }}</p>
+              </div>
+            {% endfor %}
           </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
+        {% else %}
+          <p class="profile-empty">Você ainda não cadastrou nenhum endereço.</p>
+        {% endif %}
+      </section>
+
+      <section class="profile-card">
+        <div class="profile-card__header">
+          <h3>Pedidos</h3>
+        </div>
+
+        {% if pedidos %}
+          <div class="orders-list">
+            {% for pedido in pedidos %}
+              <a class="order-item" href="{% url 'pedido:detalhe_pedido' pedido.id %}">
+                <div class="order-item__top">
+                  <strong>Pedido #{{ pedido.id }}</strong>
+                  <span class="order-status">{{ pedido.get_status_display }}</span>
+                </div>
+                <p>{{ pedido.criado_em|date:"d/m/Y \à\s H:i" }}</p>
+                <p>{{ pedido.itens.count }} item{{ pedido.itens.count|pluralize }}</p>
+              </a>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="profile-empty">Você ainda não fez nenhum pedido.</p>
+        {% endif %}
+      </section>
+    </div>
+  </section>
 {% endblock %}
