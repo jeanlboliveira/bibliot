@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -28,6 +30,10 @@ class Pedido(models.Model):
         choices=Status.choices,
         default=Status.AGUARDANDO,
     )
+
+    @property
+    def total(self):
+        return sum((item.subtotal for item in self.itens.all()), start=Decimal("0.00"))
 
     def __str__(self):
         return f"Pedido #{self.pk}"

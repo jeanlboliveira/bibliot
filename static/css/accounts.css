@@ -1,9 +1,284 @@
-/* CSS extraído de accounts/templates/accounts/profile.html */
-button {
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem 0 2rem;
+}
+
+.profile-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%),
+    linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
   color: var(--branco);
-  background-color: var(--cor-erro);
-  padding: 1rem;
+  box-shadow: var(--sombra-md);
+}
+
+.profile-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+}
+
+.profile-hero h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.profile-subtitle {
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.profile-stat {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(8px);
+}
+
+.profile-stat strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--branco);
+  overflow-wrap: anywhere;
+}
+
+.profile-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.82);
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.profile-link,
+.profile-logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
   cursor: pointer;
+}
+
+.profile-link {
+  background: var(--branco);
+  color: var(--cor-primaria);
+}
+
+.profile-link--ghost {
+  border: 1px solid var(--cor-borda);
+  background: transparent;
+  color: var(--cor-primaria);
+}
+
+.profile-logout {
+  background: rgba(255,255,255,0.16);
+  color: var(--branco);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.profile-card--info,
+.profile-card--wide {
+  grid-column: 1 / -1;
+}
+
+.profile-card {
+  background: var(--branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: 1.25rem;
+  padding: 1.35rem;
+  box-shadow: var(--sombra-sm);
+}
+
+.profile-card__header h3 {
+  margin: 0 0 1rem;
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+}
+
+.account-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.account-summary__item {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+}
+
+.account-summary__item span {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cor-texto-suave);
+}
+
+.account-summary__item strong {
+  color: var(--cor-texto);
+  word-break: break-word;
+}
+
+.address-list,
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.address-item,
+.order-item {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.9rem;
+  background: var(--cor-fundo);
+}
+
+.address-item__top,
+.order-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.order-item__top strong {
+  display: block;
+}
+
+.order-item__top p {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+}
+
+.address-item p,
+.order-item p {
+  margin: 0.2rem 0;
+  color: var(--cor-texto-suave);
+}
+
+.address-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(22,163,74,0.12);
+  color: var(--cor-sucesso);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.order-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-padrao), border-color var(--transicao-padrao);
+}
+
+.order-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99,102,241,0.32);
+  box-shadow: var(--sombra-md);
+}
+
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(99,102,241,0.12);
+  color: var(--cor-secundaria);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.order-item__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.order-item__details span {
+  color: var(--cor-texto-suave);
+  font-size: 0.92rem;
+}
+
+.order-item__details strong {
+  color: var(--cor-primaria);
+}
+
+.order-item__books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.order-item__books li {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(99,102,241,0.08);
+  color: var(--cor-secundaria);
+  font-size: 0.8rem;
+}
+
+.profile-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.profile-empty {
+  margin: 0;
+  color: var(--cor-texto-suave);
 }
 
 .address-card {
@@ -126,7 +401,33 @@ button {
   background: linear-gradient(135deg, var(--cor-primaria-hover) 0%, var(--cor-secundaria-hover) 100%);
 }
 
+@media (max-width: 900px) {
+  .profile-hero,
+  .profile-stats,
+  .account-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 700px) {
+  .profile-hero {
+    padding: 1.25rem;
+  }
+
+  .profile-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .profile-link,
+  .profile-logout {
+    width: 100%;
+  }
+
   .address-card {
     padding: 1.25rem;
   }

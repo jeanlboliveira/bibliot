@@ -4,32 +4,127 @@
   Perfil
 {% endblock %}
 
-{% block page_style %}{% endblock %}
-
 {% block content %}
-  <div class="profile-container">
-    <h2>Olá 👋, {{ request.user.nome }}</h2>
+  <section class="profile-page">
+    <div class="profile-hero">
+      <div class="profile-hero__content">
+        <p class="profile-eyebrow">Minha conta</p>
+        <h2>Olá, {{ request.user.nome }}</h2>
+        <p class="profile-subtitle">Centralize seus endereços, acompanhe seus pedidos e volte ao catálogo com rapidez.</p>
 
-    <div class="profile-actions">
-      <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
+        <div class="profile-stats" aria-label="Resumo da conta">
+          <article class="profile-stat">
+            <strong>{{ enderecos|length }}</strong>
+            <span>Endereço{{ enderecos|length|pluralize }}</span>
+          </article>
+          <article class="profile-stat">
+            <strong>{{ pedidos|length }}</strong>
+            <span>Pedido{{ pedidos|length|pluralize }}</span>
+          </article>
+          <article class="profile-stat">
+            <strong>{{ request.user.email }}</strong>
+            <span>Conta ativa</span>
+          </article>
+        </div>
+      </div>
 
-      {% comment %} tem que usar no form, se usar no <a />> não em button dá erro 405 pq a func não suporta o get {% endcomment %}
-      <form action="{% url 'accounts:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">logout</button>
-      </form>
+      <div class="profile-actions">
+        <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
+
+        <form action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="profile-logout">Sair</button>
+        </form>
+      </div>
     </div>
 
-    {% if enderecos %}
-      <div class="address-list">
-        {% for endereco in enderecos %}
-          <div class="address-item">
-            <strong>{{ endereco.nome_completo }}</strong>
-            <p>{{ endereco.rua }}, {{ endereco.numero }} - {{ endereco.bairro }}</p>
-            <p>{{ endereco.cidade }}/{{ endereco.estado }} · CEP {{ endereco.cep }}</p>
+    <div class="profile-grid">
+      <section class="profile-card profile-card--info">
+        <div class="profile-card__header">
+          <h3>Dados da conta</h3>
+        </div>
+
+        <div class="account-summary">
+          <div class="account-summary__item">
+            <span>E-mail</span>
+            <strong>{{ request.user.email }}</strong>
           </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  </div>
+          <div class="account-summary__item">
+            <span>Telefone</span>
+            <strong>{{ request.user.telefone|default:"Não informado" }}</strong>
+          </div>
+          <div class="account-summary__item">
+            <span>Nome</span>
+            <strong>{{ request.user.nome }}</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-card">
+        <div class="profile-card__header">
+          <h3>Endereços</h3>
+        </div>
+
+        {% if enderecos %}
+          <div class="address-list">
+            {% for endereco in enderecos %}
+              <div class="address-item">
+                <div class="address-item__top">
+                  <strong>{{ endereco.nome_completo }}</strong>
+                  {% if endereco.principal %}
+                    <span class="address-pill">Principal</span>
+                  {% endif %}
+                </div>
+                <p>{{ endereco.rua }}, {{ endereco.numero }} - {{ endereco.bairro }}</p>
+                <p>{{ endereco.cidade }}/{{ endereco.estado }} · CEP {{ endereco.cep }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="profile-empty">Você ainda não cadastrou nenhum endereço.</p>
+        {% endif %}
+      </section>
+
+      <section class="profile-card profile-card--wide">
+        <div class="profile-card__header">
+          <h3>Pedidos</h3>
+        </div>
+
+        {% if pedidos %}
+          <div class="orders-list">
+            {% for pedido in pedidos %}
+              <a class="order-item" href="{% url 'pedido:detalhe_pedido' pedido.id %}">
+                <div class="order-item__top">
+                  <div>
+                    <strong>Pedido #{{ pedido.id }}</strong>
+                    <p>{{ pedido.criado_em|date:"d/m/Y \à\s H:i" }}</p>
+                  </div>
+                  <span class="order-status">{{ pedido.get_status_display }}</span>
+                </div>
+
+                <div class="order-item__details">
+                  <span>{{ pedido.itens.count }} item{{ pedido.itens.count|pluralize }}</span>
+                  <strong>R$ {{ pedido.total|floatformat:2 }}</strong>
+                </div>
+
+                <ul class="order-item__books">
+                  {% for item in pedido.itens.all|slice:":2" %}
+                    <li>{{ item.livro.titulo }}</li>
+                  {% endfor %}
+                  {% if pedido.itens.count > 2 %}
+                    <li>+{{ pedido.itens.count|add:"-2" }} livro{{ pedido.itens.count|add:"-2"|pluralize }}</li>
+                  {% endif %}
+                </ul>
+              </a>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="profile-empty-state">
+            <p class="profile-empty">Você ainda não fez nenhum pedido.</p>
+            <a class="profile-link profile-link--ghost" href="{% url 'core:home' %}">Explorar catálogo</a>
+          </div>
+        {% endif %}
+      </section>
+    </div>
+  </section>
 {% endblock %}

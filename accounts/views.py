@@ -26,7 +26,10 @@ def profile_view(request):
     return render(
         request=request,
         template_name='accounts/profile.html',
-        context={'enderecos': request.user.enderecos.all()}
+        context={
+            'enderecos': request.user.enderecos.all(),
+            'pedidos': request.user.pedidos.select_related('endereco').prefetch_related('itens__livro').order_by('-criado_em')
+        }
     )
 
 
