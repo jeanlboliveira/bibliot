@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+img,
+video,
+iframe {
+    max-width: 100%;
+    display: block;
+}
+
+img {
+    height: auto;
+}
+
 html,
 body {
     height: 100%;
