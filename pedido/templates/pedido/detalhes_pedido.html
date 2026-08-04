@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Detalhes do pedido
+{% endblock %}
+
+{% block content %}
+  <section class="pedido-page">
+    <section class="pedido-hero">
+      <div>
+        <span class="pedido-pill">Pedido #{{ pedido.id }}</span>
+        <h2>Detalhes do pedido</h2>
+        <p>Confira os itens, o endereço de entrega e o status da compra.</p>
+      </div>
+      <div class="pedido-status">
+        <span>Pedido realizado em {{ pedido.criado_em|date:"d/m/Y \à\s H:i" }}</span>
+        <strong>Status: {{ pedido.get_status_display }}</strong>
+      </div>
+    </section>
+
+    <div class="pedido-grid">
+      <div class="pedido-card">
+        <div class="pedido-section-title">Dados de entrega</div>
+
+        <div class="pedido-form">
+          <div class="form-grid">
+            <div class="field">
+              <label>Nome completo</label>
+              <input type="text" value="{{ pedido.usuario.nome|default:pedido.usuario.email }}" readonly />
+            </div>
+            <div class="field">
+              <label>E-mail</label>
+              <input type="text" value="{{ pedido.usuario.email }}" readonly />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Endereço</label>
+            <input type="text" value="{{ pedido.endereco.rua }}, {{ pedido.endereco.numero }} - {{ pedido.endereco.bairro }}" readonly />
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label>Cidade</label>
+              <input type="text" value="{{ pedido.endereco.cidade }}/{{ pedido.endereco.estado }}" readonly />
+            </div>
+            <div class="field">
+              <label>CEP</label>
+              <input type="text" value="{{ pedido.endereco.cep }}" readonly />
+            </div>
+          </div>
+
+          {% if pedido.endereco.referencia %}
+            <div class="field">
+              <label>Referência</label>
+              <input type="text" value="{{ pedido.endereco.referencia }}" readonly />
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <aside class="pedido-card pedido-summary">
+        <div class="pedido-section-title">Resumo do pedido</div>
+
+        <ul class="summary-list">
+          {% for item in pedido.itens.all %}
+            <li class="summary-item">
+              <span>{{ item.livro.titulo }}</span>
+              <strong>R$ {{ item.subtotal|floatformat:2 }}</strong>
+            </li>
+          {% empty %}
+            <li class="summary-item">
+              <span>Nenhum item encontrado</span>
+              <strong>R$ 0,00</strong>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong>R$ {{ pedido_total|floatformat:2 }}</strong>
+        </div>
+
+        <div class="summary-note">
+          Acompanhe este pedido na sua área de perfil.
+        </div>
+      </aside>
+    </div>
+  </section>
+{% endblock %}

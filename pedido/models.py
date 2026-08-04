@@ -61,25 +61,25 @@ class ItemPedido(models.Model):
 
 
 class EnderecoPedido(models.Model):
-  """Model definition for EnderecoPedido."""
+    """Model definition for EnderecoPedido."""
 
-  # TODO: Define fields here
-  cep = models.CharField(max_length=9)
-  estado = models.CharField(max_length=2)
-  cidade = models.CharField(max_length=50)
-  bairro = models.CharField(max_length=50)
-  rua = models.CharField(max_length=200)
-  numero = models.CharField(max_length=10)
-  complemento = models.CharField(max_length=100, blank=True)
-  referencia = models.CharField(max_length=200, blank=True)
+    # TODO: Define fields here
+    cep = models.CharField(max_length=9)
+    estado = models.CharField(max_length=2)
+    cidade = models.CharField(max_length=50)
+    bairro = models.CharField(max_length=50)
+    rua = models.CharField(max_length=200)
+    numero = models.CharField(max_length=10)
+    complemento = models.CharField(max_length=100, blank=True)
+    referencia = models.CharField(max_length=200, blank=True)
 
-  class Meta:
-    """Meta definition for EnderecoPedido."""
+    class Meta:
+        """Meta definition for EnderecoPedido."""
 
-    verbose_name = 'EnderecoPedido'
-    verbose_name_plural = 'EnderecoPedidos'
+        verbose_name = 'EnderecoPedido'
+        verbose_name_plural = 'EnderecoPedidos'
 
-  def __str__(self):
-    """Unicode representation of EnderecoPedido."""
-    return f"{self.rua}, {self.numero} - {self.cidade}/{self.estado}"
+    def __str__(self):
+        """Unicode representation of EnderecoPedido."""
+        return f"{self.rua}, {self.numero} - {self.cidade}/{self.estado}"
 

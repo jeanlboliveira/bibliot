@@ -20,12 +20,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('', include('carrinho.urls')),
+    path('admin/', admin.site.urls),
     path('livros/', include('catalogo.urls')),
     path("auth/", include('accounts.urls')),
-    path('', include('carrinho.urls')),
-    path('wishlist/', include('lista_desejos.urls'))
+    path('wishlist/', include('lista_desejos.urls')),
+    path('pedido/', include('pedido.urls'))
 ]
 
 if settings.DEBUG:

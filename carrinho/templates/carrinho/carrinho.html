@@ -54,10 +54,9 @@
 
     <div class="fechar-pedido">
       <div>
-      <strong>Total carrinho:</strong><span id='subtotalCarrinho'> R$ {{ subtotal_carrinho|floatformat:2 }}</span>
-
+        <strong>Total carrinho:</strong><span id='subtotalCarrinho'> R$ {{ subtotal_carrinho|floatformat:2 }}</span>
       </div>
-      <button type="submit" class="pedido">Fechar pedido</button>
+      <a href="{% url 'pedido:confirmar_pedido' %}" class="pedido">Fechar pedido</a>
     </div>
   </section>
 {% endblock %}
