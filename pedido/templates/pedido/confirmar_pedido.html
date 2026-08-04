@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Confirmar pedido
+{% endblock %}
+
+{% block content %}
+  <section class="pedido-page">
+    <section class="pedido-hero">
+      <div>
+        <span class="pedido-pill">Última etapa</span>
+        <h2>Confirmar pedido</h2>
+        <p>Escolha o endereço de entrega, defina a forma de pagamento e finalize a compra.</p>
+      </div>
+      <div class="pedido-status">
+        <span>Entrega em até 3 dias úteis</span>
+        <strong>Pagamento seguro</strong>
+      </div>
+    </section>
+
+    <div class="pedido-grid">
+      <div class="pedido-card">
+        <div class="pedido-section-title">Dados de entrega</div>
+
+        <form method="post" class="pedido-form" action="{% url 'pedido:confirmar_pedido' %}">
+          {% csrf_token %}
+
+          <div class="field">
+            <label for="endereco">Endereço de entrega</label>
+            <select id="endereco" name="endereco" required>
+              {% for endereco in enderecos %}
+                <option value="{{ endereco.id }}">
+                  {{ endereco.nome_completo }} - {{ endereco.rua }}, {{ endereco.numero }} · {{ endereco.bairro }} · {{ endereco.cidade }}/{{ endereco.estado }}
+                </option>
+              {% empty %}
+                <option value="">Nenhum endereço cadastrado</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Forma de pagamento</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="pagamento" value="cartao" checked />
+                <span>Cartão de crédito</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pagamento" value="boleto" />
+                <span>Boleto bancário</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pagamento" value="pix" />
+                <span>Pix</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pedido-actions">
+            <a href="{% url 'carrinho:carrinho' %}" class="btn-secondary">Voltar</a>
+            <button type="submit" class="btn-primary">Confirmar pedido</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="pedido-card pedido-summary">
+        <div class="pedido-section-title">Resumo da compra</div>
+
+        <ul class="summary-list">
+          {% for item in itens %}
+            <li class="summary-item">
+              <span>{{ item.livro.titulo }} × {{ item.quantidade }}</span>
+              <strong>R$ {{ item.subtotal|floatformat:2 }}</strong>
+            </li>
+          {% empty %}
+            <li class="summary-item">
+              <span>Nenhum item</span>
+              <strong>R$ 0,00</strong>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong>R$ {{ subtotal_carrinho|floatformat:2 }}</strong>
+        </div>
+
+        <div class="summary-note">
+          Esta é uma confirmação fictícia. Ao confirmar, o pedido será criado e o carrinho será limpo.
+        </div>
+      </aside>
+    </div>
+  </section>
+{% endblock %}

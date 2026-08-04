@@ -24,6 +24,7 @@ def carrinho_view(request):
         context=context
     )
 
+
 @login_required
 def adicionar_item_view(request, livro_id):
     if request.method == 'POST':
@@ -48,6 +49,7 @@ def adicionar_item_view(request, livro_id):
 
     return HttpResponse(status=405)
 
+
 @login_required
 def remover_item_view(request, livro_id):
     if request.method == 'POST':
@@ -59,6 +61,7 @@ def remover_item_view(request, livro_id):
         return redirect('carrinho:carrinho')
 
     return HttpResponse(status=405)
+
 
 @login_required
 def limpar_carrinho_view(request):
@@ -73,6 +76,7 @@ def limpar_carrinho_view(request):
         request=request,
         template_name='core/home.html'
     )
+
 
 @login_required
 def diminuir_quantidade_view(request, livro_id):
@@ -96,3 +100,5 @@ def diminuir_quantidade_view(request, livro_id):
         request=request,
         template_name='core/home.html'
     )
+
+

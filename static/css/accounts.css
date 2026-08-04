@@ -5,3 +5,139 @@ button {
   padding: 1rem;
   cursor: pointer;
 }
+
+.address-card {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: var(--branco);
+  box-shadow: var(--sombra-md);
+}
+
+.address-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.address-card__eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--cor-secundaria);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.address-card__header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--cor-primaria);
+}
+
+.address-card__back {
+  color: var(--cor-secundaria);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.address-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-errors {
+  margin: 0;
+  color: var(--cor-erro);
+  font-size: 0.85rem;
+}
+
+.address-form__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.checkbox-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+}
+
+.checkbox-field input {
+  width: auto;
+  accent-color: var(--cor-secundaria);
+}
+
+.address-form__footer button {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+}
+
+.address-form__footer button:hover {
+  background: linear-gradient(135deg, var(--cor-primaria-hover) 0%, var(--cor-secundaria-hover) 100%);
+}
+
+@media (max-width: 700px) {
+  .address-card {
+    padding: 1.25rem;
+  }
+
+  .address-card__header,
+  .address-form__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .address-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
