@@ -42,6 +42,14 @@ class CarrinhoManager(models.Manager):
     def esta_no_carrinho(self, usuario, livro):
         return self.filter(usuario=usuario, livro=livro).exists()
 
+    def subtotal_carrinho(self, usuario):
+        return (
+            self.filter(usuario=usuario)
+            .aggregate(
+                subtotal=models.Sum(models.F("livro__preco" )* models.F('quantidade'))
+            )['subtotal'] or 0
+        )
+
 class Carrinho(models.Model):
     usuario = models.ForeignKey("accounts.Usuario", verbose_name=_("Usuário"), on_delete=models.CASCADE)
     livro = models.ForeignKey("catalogo.Livro", verbose_name=_("Item"), on_delete=models.CASCADE)

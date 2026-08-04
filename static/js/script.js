@@ -29,3 +29,9 @@ function atualizarHeader(query, data, key) {
   document.querySelector(query).textContent = data[key]
 
 }
+
+const formatarPreco = (valor) =>
+  new Intl.NumberFormat("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(valor);

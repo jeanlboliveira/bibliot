@@ -51,6 +51,14 @@
         {% endfor %}
       </ul>
     </div>
+
+    <div class="fechar-pedido">
+      <div>
+      <strong>Total carrinho:</strong><span id='subtotalCarrinho'> R$ {{ subtotal_carrinho|floatformat:2 }}</span>
+
+      </div>
+      <button type="submit" class="pedido">Fechar pedido</button>
+    </div>
   </section>
 {% endblock %}
 
@@ -64,8 +72,9 @@
         .then(response => response.json())
         .then(data => {
           console.log(data)
+          document.getElementById("subtotalCarrinho").textContent = ` R$ ${formatarPreco(data.subtotal_carrinho)}`;
           wrapper.querySelector('.qntd-input').value = data.quantidade
-          wrapper.querySelector('.subtotal').textContent = data.subtotal
+          wrapper.querySelector('.subtotal').textContent = formatarPreco(data.subtotal)
         })
         .catch((error) => console.error('Erro ao atualizar quantidade:', error))
     }

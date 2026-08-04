@@ -9,9 +9,13 @@ from catalogo.models import Livro
 @login_required
 def carrinho_view(request):
     items = Carrinho.objects.get_itens(usuario=request.user)
+    subtotal_carrinho = Carrinho.objects.subtotal_carrinho(usuario=request.user)
+
+    print('SUBTOTAL DO CARRINHO:', subtotal_carrinho)
 
     context = {
         'items': items,
+        'subtotal_carrinho': subtotal_carrinho,
     }
 
     return render(
@@ -30,12 +34,16 @@ def adicionar_item_view(request, livro_id):
             usuario=request.user
         )
 
+        subtotal_carrinho = Carrinho.objects.subtotal_carrinho(usuario=request.user)
+
+
         item = get_object_or_404(Carrinho, usuario=request.user, livro=livro)
 
         return JsonResponse({
             'quantidade': item.quantidade,
             'subtotal': f'{item.subtotal:.2f}',
             'quantidade_total_carrinho': Carrinho.objects.filter(usuario=request.user).count(),
+            'subtotal_carrinho': f'{subtotal_carrinho:.2f}'
         })
 
     return HttpResponse(status=405)
@@ -72,12 +80,16 @@ def diminuir_quantidade_view(request, livro_id):
         livro = get_object_or_404(Livro, id=livro_id)
 
         Carrinho.objects.diminuir_quantidade(usuario=request.user, livro=livro)
+        subtotal_carrinho = Carrinho.objects.subtotal_carrinho(usuario=request.user)
+
 
         item = get_object_or_404(Carrinho, usuario=request.user, livro=livro)
 
         return JsonResponse({
             'quantidade': item.quantidade,
-            'subtotal': f'{item.subtotal:.2f}',
+            'subtotal': item.subtotal,
+            'subtotal_carrinho': subtotal_carrinho
+
         })
 
     return render(
