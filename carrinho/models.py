@@ -39,6 +39,9 @@ class CarrinhoManager(models.Manager):
 
         return item
 
+    def esta_no_carrinho(self, usuario, livro):
+        return self.filter(usuario=usuario, livro=livro).exists()
+
 class Carrinho(models.Model):
     usuario = models.ForeignKey("accounts.Usuario", verbose_name=_("Usuário"), on_delete=models.CASCADE)
     livro = models.ForeignKey("catalogo.Livro", verbose_name=_("Item"), on_delete=models.CASCADE)

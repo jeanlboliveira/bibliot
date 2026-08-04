@@ -46,6 +46,17 @@
   stroke: var(--cor-erro);
 }
 
+.item_no_carrinho {
+  background-color: var(--cor-mensagem-fundo);
+  padding: var(--espaco-xs);
+
+  color: var(--cor-mensagem);
+  border: 1px solid var(--cor-mensagem);
+
+  border-radius: var(--border-radius-sm);
+
+}
+
 .livro-detail {
   padding: 2rem 5rem;
 }

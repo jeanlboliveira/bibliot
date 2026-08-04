@@ -14,6 +14,9 @@
 
 {% block content %}
   <div class="livro-detail">
+    {% if esta_no_carrinho %}
+      <span class="item_no_carrinho">Este produto já está no seu <a href="{% url 'carrinho:carrinho' %}">carriho &rarr;</a></span>
+    {% endif %}
     <div class="grid">
       <div class="column">
         <div class="livro-foto">
