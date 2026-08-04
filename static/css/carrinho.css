@@ -22,7 +22,7 @@
   color: var(--cor-primaria);
 }
 
-    .btn-limpar {
+.btn-limpar {
   border: 1px solid var(--cor-erro-borda);
   background: var(--cor-erro-fundo);
   color: var(--cor-erro);
@@ -123,7 +123,7 @@
   padding: 0.25rem;
 }
 
-    .qntd-button {
+.qntd-button {
   width: 2rem;
   height: 2rem;
   border: none;
@@ -133,6 +133,10 @@
   color: var(--cor-primaria);
   background-color: var(--branco);
   transition: background-color var(--transicao-rapida), transform var(--transicao-rapida);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .qntd-button:hover {
@@ -156,7 +160,7 @@
   justify-content: flex-end;
 }
 
-    .item-buttons button {
+.item-buttons button {
   border: 1px solid var(--cor-erro-strong);
   background: var(--branco);
   color: var(--cor-erro);
@@ -171,6 +175,53 @@
 .item-buttons button:hover {
   background-color: var(--cor-erro-ghost);
   transform: translateY(-1px);
+}
+
+.fechar-pedido {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--branco) 0%, var(--cor-fundo-suave) 100%);
+  box-shadow: var(--sombra-sm);
+}
+
+.fechar-pedido span {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--cor-texto);
+}
+
+.fechar-pedido strong {
+  color: var(--cor-primaria);
+}
+
+.pedido {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.7rem 1.15rem;
+  min-width: 170px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+  cursor: pointer;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-padrao), opacity var(--transicao-rapida);
+  box-shadow: var(--sombra-sm);
+}
+
+.pedido:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-md);
+}
+
+.pedido:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 780px) {
@@ -195,5 +246,14 @@
 
   .carrinho-header {
     align-items: flex-start;
+  }
+
+  .fechar-pedido {
+    align-items: stretch;
+  }
+
+  .pedido {
+    width: 100%;
+    min-width: 0;
   }
 }
