@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+  Adicionar endereço
+{% endblock %}
+
+{% block page_style %}
+  <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="address-card">
+    <div class="address-card__header">
+      <div>
+        <p class="address-card__eyebrow">Perfil</p>
+        <h2>Adicionar novo endereço</h2>
+      </div>
+      <a class="address-card__back" href="{% url 'accounts:profile' %}">Voltar ao perfil</a>
+    </div>
+
+    <form method="post" class="address-form">
+      {% csrf_token %}
+
+      <div class="address-form__grid">
+        <div class="form-field">
+          <label for="id_nome_completo">Nome completo</label>
+          {{ form.nome_completo }}
+          {% if form.nome_completo.errors %}
+            <p class="form-errors">{{ form.nome_completo.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_cep">CEP</label>
+          {{ form.cep }}
+          {% if form.cep.errors %}
+            <p class="form-errors">{{ form.cep.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_estado">Estado</label>
+          {{ form.estado }}
+          {% if form.estado.errors %}
+            <p class="form-errors">{{ form.estado.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_cidade">Cidade</label>
+          {{ form.cidade }}
+          {% if form.cidade.errors %}
+            <p class="form-errors">{{ form.cidade.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_bairro">Bairro</label>
+          {{ form.bairro }}
+          {% if form.bairro.errors %}
+            <p class="form-errors">{{ form.bairro.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_rua">Rua</label>
+          {{ form.rua }}
+          {% if form.rua.errors %}
+            <p class="form-errors">{{ form.rua.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_numero">Número</label>
+          {{ form.numero }}
+          {% if form.numero.errors %}
+            <p class="form-errors">{{ form.numero.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field">
+          <label for="id_complemento">Complemento</label>
+          {{ form.complemento }}
+          {% if form.complemento.errors %}
+            <p class="form-errors">{{ form.complemento.errors|striptags }}</p>
+          {% endif %}
+        </div>
+
+        <div class="form-field form-field--full">
+          <label for="id_referencia">Referência</label>
+          {{ form.referencia }}
+          {% if form.referencia.errors %}
+            <p class="form-errors">{{ form.referencia.errors|striptags }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="address-form__footer">
+        <label class="checkbox-field">
+          {{ form.principal }}
+          <span>Definir como endereço principal</span>
+        </label>
+
+        <button type="submit">Salvar endereço</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

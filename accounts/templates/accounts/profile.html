@@ -10,10 +10,26 @@
   <div class="profile-container">
     <h2>Olá 👋, {{ request.user.nome }}</h2>
 
-    {% comment %} tem que usar no form, se usar no <a />> não em button dá erro 405 pq a func não suporta o get {% endcomment %}
-    <form action="{% url 'accounts:logout' %}" method="post">
-      {% csrf_token %}
-      <button type="submit">logout</button>
-    </form>
+    <div class="profile-actions">
+      <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
+
+      {% comment %} tem que usar no form, se usar no <a />> não em button dá erro 405 pq a func não suporta o get {% endcomment %}
+      <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+      </form>
+    </div>
+
+    {% if enderecos %}
+      <div class="address-list">
+        {% for endereco in enderecos %}
+          <div class="address-item">
+            <strong>{{ endereco.nome_completo }}</strong>
+            <p>{{ endereco.rua }}, {{ endereco.numero }} - {{ endereco.bairro }}</p>
+            <p>{{ endereco.cidade }}/{{ endereco.estado }} · CEP {{ endereco.cep }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 {% endblock %}

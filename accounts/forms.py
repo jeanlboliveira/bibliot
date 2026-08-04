@@ -1,6 +1,7 @@
 from django import forms
-from .models import Usuario
+from .models import Usuario, Endereco
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django import forms
 
 class LoginForm(AuthenticationForm):
     # o username é obrigatório modo a estrutura da classe-mãe
@@ -19,6 +20,7 @@ class LoginForm(AuthenticationForm):
             'id': 'pass',
         })
     )
+
 
 class CadastroForm(UserCreationForm):
 
@@ -57,3 +59,19 @@ class CadastroForm(UserCreationForm):
         model = Usuario
         fields = ('email', 'nome')
     
+
+class EnderecoForm(forms.ModelForm):
+    class Meta:
+        model = Endereco
+        fields = [
+            "nome_completo",
+            "cep",
+            "estado",
+            "cidade",
+            "bairro",
+            "rua",
+            "numero",
+            "complemento",
+            "referencia",
+            "principal",
+        ]
