@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Busca: {{ query }}
+{% endblock %}
+
+{% block content %}
+  <div class="home-page">
+    <h2>Resultados para "{{ query }}"</h2>
+
+    {% if livros %}
+      <div class="livros-line">
+        {% for livro in livros %}
+          <article class="livro-card">
+            <a href="{% url 'catalogo:livro_detail' livro.slug %}">
+              <img src="{{ livro.capa.url }}" alt="capa do livro '{{ livro.titulo }}'" />
+              <div class="livro-info">
+                <span class="titulo">{{ livro.titulo }}</span>
+                <span class="autor">{{ livro.autor.nome }}</span>
+                <span class="preco">R$ {{ livro.preco }}</span>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Nenhum livro encontrado para "{{ query }}".</p>
+    {% endif %}
+  </div>
+{% endblock %}

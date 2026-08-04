@@ -114,12 +114,12 @@
   border-radius: var(--border-radius-sm);
 }
 
-    .buy-now {
+.buy-now {
   background-color: var(--cor-secundaria);
   color: var(--branco);
 }
 
-    .add-to-cart {
+.add-to-cart {
   background-color: var(--branco);
   border: 1px solid var(--cor-secundaria);
   color: var(--cor-secundaria);

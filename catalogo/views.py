@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from . import models
+from django.db.models import Q
+from django.http import HttpResponse
+from .models import Livro
 from lista_desejos.models import ListaDeDesejos
 from carrinho.models import Carrinho
 
 def livro_detail_view(request, slug):
-    livro = get_object_or_404(models.Livro, slug=slug)
+    livro = get_object_or_404(Livro, slug=slug)
     esta_na_lista = False
     esta_no_carrinho = False
 
@@ -25,3 +27,26 @@ def livro_detail_view(request, slug):
         context=context
     )
 
+def buscar_livros_view(request):
+    query = request.GET.get('q', '').strip()
+    livros = []
+
+    if query:
+        livros = Livro.objects.filter(
+            Q(titulo__icontains=query) |
+            Q(autor__nome__icontains=query) |
+            Q(isbn__icontains=query)
+        ).distinct()
+
+        context = {
+            'query': query,
+            'livros': livros,
+        }
+
+        return render(
+            request=request,
+            template_name='catalogo/busca.html',
+            context=context
+        )
+
+    return HttpResponse(status=405)
