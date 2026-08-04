@@ -35,7 +35,8 @@ def buscar_livros_view(request):
         livros = Livro.objects.filter(
             Q(titulo__icontains=query) |
             Q(autor__nome__icontains=query) |
-            Q(isbn__icontains=query)
+            Q(isbn__icontains=query) |
+            Q(categoria__nome__icontains=query) 
         ).distinct()
 
         context = {
