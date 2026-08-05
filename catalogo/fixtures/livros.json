@@ -1,0 +1,883 @@
+[
+  {
+    "titulo": "Memórias Póstumas de Brás Cubas",
+    "categoria": "Romance",
+    "autor": "Machado de Assis",
+    "capa": "memorias_postumas.jpg",
+    "isbn": "9788567000590",
+    "preco": 39.90,
+    "sinopse": "Um clássico da literatura brasileira, narrado por um defunto autor.",
+    "lancamento": "1881-01-01"
+  },
+  {
+    "titulo": "O Cortiço",
+    "categoria": "Romance",
+    "autor": "Aluísio Azevedo",
+    "capa": "o_cortico.jpg",
+    "isbn": "9788571750244",
+    "preco": 29.90,
+    "sinopse": "Retrato da vida em um cortiço no Rio de Janeiro do século XIX.",
+    "lancamento": "1890-01-01"
+  },
+  {
+    "titulo": "Gabriela, Cravo e Canela",
+    "categoria": "Romance",
+    "autor": "Jorge Amado",
+    "capa": "gabriela.jpg",
+    "isbn": "9788501060870",
+    "preco": 42.50,
+    "sinopse": "História de amor e política em Ilhéus, na década de 1920.",
+    "lancamento": "1958-01-01"
+  },
+  {
+    "titulo": "Dona Flor e Seus Dois Maridos",
+    "categoria": "Romance",
+    "autor": "Jorge Amado",
+    "capa": "dona_flor.jpg",
+    "isbn": "9788501060880",
+    "preco": 45.00,
+    "sinopse": "A vida amorosa de Dona Flor entre o marido morto e o novo marido.",
+    "lancamento": "1966-01-01"
+  },
+  {
+    "titulo": "A Hora da Estrela",
+    "categoria": "Romance",
+    "autor": "Clarice Lispector",
+    "capa": "hora_estrela.jpg",
+    "isbn": "9788535905420",
+    "preco": 32.90,
+    "sinopse": "A história de Macabéa, uma nordestina pobre em São Paulo.",
+    "lancamento": "1977-01-01"
+  },
+  {
+    "titulo": "O Morro dos Ventos Uivantes",
+    "categoria": "Romance",
+    "autor": "Emily Brontë",
+    "capa": "morro_ventos.jpg",
+    "isbn": "9788573264270",
+    "preco": 29.90,
+    "sinopse": "Um romance de paixão e vingança nos pântanos da Inglaterra.",
+    "lancamento": "1847-01-01"
+  },
+
+  {
+    "titulo": "Orgulho e Preconceito",
+    "categoria": "Romance",
+    "autor": "Jane Austen",
+    "capa": "orgulho_preconceito.jpg",
+    "isbn": "9788573264500",
+    "preco": 28.90,
+    "sinopse": "O clássico romance de costumes sobre o amor e as convenções sociais.",
+    "lancamento": "1813-01-28"
+  },
+  {
+    "titulo": "Razão e Sensibilidade",
+    "categoria": "Romance",
+    "autor": "Jane Austen",
+    "capa": "razao_sensibilidade.jpg",
+    "isbn": "9788573264510",
+    "preco": 30.90,
+    "sinopse": "A história das irmãs Dashwood e suas diferentes abordagens ao amor.",
+    "lancamento": "1811-01-01"
+  },
+  {
+    "titulo": "Cem Anos de Solidão",
+    "categoria": "Romance",
+    "autor": "Gabriel García Márquez",
+    "capa": "cem_anos.jpg",
+    "isbn": "9788535914841",
+    "preco": 49.90,
+    "sinopse": "A saga da família Buendía em Macondo, um clássico do realismo mágico.",
+    "lancamento": "1967-05-30"
+  },
+  {
+    "titulo": "O Amor nos Tempos do Cólera",
+    "categoria": "Romance",
+    "autor": "Gabriel García Márquez",
+    "capa": "amor_colera.jpg",
+    "isbn": "9788535914842",
+    "preco": 44.90,
+    "sinopse": "Uma história de amor que dura mais de cinquenta anos.",
+    "lancamento": "1985-01-01"
+  },
+  {
+    "titulo": "Melhor que nos Filmes",
+    "categoria": "Romance",
+    "autor": "Jenny Han",
+    "capa": "melhor_que_filmes.jpg",
+    "isbn": "9788573264516",
+    "preco": 29.90,
+    "sinopse": "Um romance juvenil sobre amizade, primeiros amores e a magia do cinema.",
+    "lancamento": "2020-01-01"
+  },
+  {
+    "titulo": "O Verão que Mudou a Minha Vida",
+    "categoria": "Romance",
+    "autor": "Jenny Han",
+    "capa": "verao_mudou_minha_vida.jpg",
+    "isbn": "9788573264517",
+    "preco": 32.90,
+    "sinopse": "Todos os verões, Belly vai para a casa de praia da família de Jeremiah e Conrad. Este verão, tudo muda.",
+    "lancamento": "2009-05-01"
+  },
+  {
+    "titulo": "É Assim que Acaba",
+    "categoria": "Romance",
+    "autor": "Colleen Hoover",
+    "capa": "assim_acaba.jpg",
+    "isbn": "9788573264518",
+    "preco": 34.90,
+    "sinopse": "Um romance emocionante sobre relacionamentos abusivos e a força para recomeçar.",
+    "lancamento": "2016-02-29"
+  },
+  {
+    "titulo": "A Hipótese do Amor",
+    "categoria": "Romance",
+    "autor": "Emily Henry",
+    "capa": "hipotese_amor.jpg",
+    "isbn": "9788573264519",
+    "preco": 36.90,
+    "sinopse": "Uma comédia romântica sobre duas pessoas opostas que fingem um namoro.",
+    "lancamento": "2021-01-01"
+  },
+  {
+    "titulo": "Neuromancer",
+    "categoria": "Ficção Científica",
+    "autor": "William Gibson",
+    "capa": "neuromancer.jpg",
+    "isbn": "9788576572004",
+    "preco": 49.90,
+    "sinopse": "O clássico que definiu o gênero cyberpunk.",
+    "lancamento": "1984-01-01"
+  },
+  {
+    "titulo": "1984",
+    "categoria": "Ficção Científica",
+    "autor": "George Orwell",
+    "capa": "1984.jpg",
+    "isbn": "9788535914840",
+    "preco": 39.90,
+    "sinopse": "Distopia sobre um regime totalitário que controla a sociedade.",
+    "lancamento": "1949-06-08"
+  },
+  {
+    "titulo": "Fahrenheit 451",
+    "categoria": "Ficção Científica",
+    "autor": "Ray Bradbury",
+    "capa": "fahrenheit.jpg",
+    "isbn": "9788551003196",
+    "preco": 34.90,
+    "sinopse": "Um mundo onde os bombeiros queimam livros ao invés de apagar incêndios.",
+    "lancamento": "1953-01-01"
+  },
+  {
+    "titulo": "Admirável Mundo Novo",
+    "categoria": "Ficção Científica",
+    "autor": "Aldous Huxley",
+    "capa": "brave_new_world.jpg",
+    "isbn": "9788520913273",
+    "preco": 37.50,
+    "sinopse": "Uma sociedade futurista onde a felicidade é imposta por drogas e condicionamento.",
+    "lancamento": "1932-01-01"
+  },
+  {
+    "titulo": "O Fim da Infância",
+    "categoria": "Ficção Científica",
+    "autor": "Arthur C. Clarke",
+    "capa": "fim_infancia.jpg",
+    "isbn": "9788576572090",
+    "preco": 42.00,
+    "sinopse": "Quando alienígenas invadem a Terra e assumem o controle da humanidade.",
+    "lancamento": "1953-01-01"
+  },
+  {
+    "titulo": "Androides Sonham com Ovelhas Elétricas?",
+    "categoria": "Ficção Científica",
+    "autor": "Philip K. Dick",
+    "capa": "androides.jpg",
+    "isbn": "9788551004001",
+    "preco": 39.00,
+    "sinopse": "Inspirou o filme Blade Runner, sobre caçadores de androides.",
+    "lancamento": "1968-01-01"
+  },
+  {
+    "titulo": "Fundação",
+    "categoria": "Ficção Científica",
+    "autor": "Isaac Asimov",
+    "capa": "fundacao.jpg",
+    "isbn": "9788576572100",
+    "preco": 45.90,
+    "sinopse": "A épica saga de um império galáctico em declínio e a ciência da psicohistória.",
+    "lancamento": "1951-01-01"
+  },
+  {
+    "titulo": "Duna",
+    "categoria": "Ficção Científica",
+    "autor": "Frank Herbert",
+    "capa": "duna.jpg",
+    "isbn": "9788576572110",
+    "preco": 52.90,
+    "sinopse": "O planeta desértico Arrakis é o cenário de intrigas políticas e ecológicas.",
+    "lancamento": "1965-08-01"
+  },
+  {
+    "titulo": "Harry Potter e a Pedra Filosofal",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_pedra.jpg",
+    "isbn": "9788532511010",
+    "preco": 39.90,
+    "sinopse": "O início da saga do jovem bruxo Harry Potter.",
+    "lancamento": "1997-06-26"
+  },
+  {
+    "titulo": "Harry Potter e a Câmara Secreta",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_camara.jpg",
+    "isbn": "9788532511020",
+    "preco": 39.90,
+    "sinopse": "Harry retorna a Hogwarts e descobre os segredos da Câmara Secreta.",
+    "lancamento": "1998-07-02"
+  },
+  {
+    "titulo": "Harry Potter e o Prisioneiro de Azkaban",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_azkaban.jpg",
+    "isbn": "9788532511030",
+    "preco": 42.90,
+    "sinopse": "Harry descobre a verdade sobre seu passado e foge do prisioneiro Sirius Black.",
+    "lancamento": "1999-07-08"
+  },
+  {
+    "titulo": "Harry Potter e o Cálice de Fogo",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_calice.jpg",
+    "isbn": "9788532511040",
+    "preco": 49.90,
+    "sinopse": "O Torneio Tribruxo coloca Harry em perigo mortal.",
+    "lancamento": "2000-07-08"
+  },
+  {
+    "titulo": "Harry Potter e a Ordem da Fênix",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_fenix.jpg",
+    "isbn": "9788532511050",
+    "preco": 54.90,
+    "sinopse": "Harry enfrenta o Ministério da Magia e a volta de Voldemort.",
+    "lancamento": "2003-06-21"
+  },
+  {
+    "titulo": "Harry Potter e o Enigma do Príncipe",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_enigma.jpg",
+    "isbn": "9788532511060",
+    "preco": 49.90,
+    "sinopse": "Dumbledore revela o passado de Voldemort enquanto Harry descobre um misterioso livro.",
+    "lancamento": "2005-07-16"
+  },
+  {
+    "titulo": "Harry Potter e as Relíquias da Morte",
+    "categoria": "Fantasia",
+    "autor": "J.K. Rowling",
+    "capa": "harry_reliquias.jpg",
+    "isbn": "9788532511070",
+    "preco": 59.90,
+    "sinopse": "A batalha final entre Harry e Voldemort pelas relíquias da morte.",
+    "lancamento": "2007-07-21"
+  },
+  {
+    "titulo": "O Hobbit",
+    "categoria": "Fantasia",
+    "autor": "J.R.R. Tolkien",
+    "capa": "hobbit.jpg",
+    "isbn": "9788595081603",
+    "preco": 49.90,
+    "sinopse": "A aventura de Bilbo Bolseiro em busca do tesouro dos anões.",
+    "lancamento": "1937-09-21"
+  },
+  {
+    "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+    "categoria": "Fantasia",
+    "autor": "J.R.R. Tolkien",
+    "capa": "lotr_anel.jpg",
+    "isbn": "9788595081600",
+    "preco": 59.90,
+    "sinopse": "O início da jornada de Frodo para destruir o Um Anel.",
+    "lancamento": "1954-07-29"
+  },
+  {
+    "titulo": "O Senhor dos Anéis: As Duas Torres",
+    "categoria": "Fantasia",
+    "autor": "J.R.R. Tolkien",
+    "capa": "lotr_torres.jpg",
+    "isbn": "9788595081601",
+    "preco": 59.90,
+    "sinopse": "A continuação da épica jornada na Terra Média.",
+    "lancamento": "1954-11-11"
+  },
+  {
+    "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+    "categoria": "Fantasia",
+    "autor": "J.R.R. Tolkien",
+    "capa": "lotr_rei.jpg",
+    "isbn": "9788595081602",
+    "preco": 59.90,
+    "sinopse": "O confronto final entre o bem e o mal na Terra Média.",
+    "lancamento": "1955-10-20"
+  },
+  {
+    "titulo": "A Guerra dos Tronos",
+    "categoria": "Fantasia",
+    "autor": "George R.R. Martin",
+    "capa": "guerra_tronos.jpg",
+    "isbn": "9788595081605",
+    "preco": 62.90,
+    "sinopse": "O primeiro livro da série As Crônicas de Gelo e Fogo, onde nobres lutam pelo trono.",
+    "lancamento": "1996-08-01"
+  },
+  {
+    "titulo": "A Fúria dos Reis",
+    "categoria": "Fantasia",
+    "autor": "George R.R. Martin",
+    "capa": "furia_reis.jpg",
+    "isbn": "9788595081606",
+    "preco": 62.90,
+    "sinopse": "A guerra pelos sete reinos se intensifica enquanto o inverno se aproxima.",
+    "lancamento": "1998-11-16"
+  },
+  {
+    "titulo": "A Tormenta de Espadas",
+    "categoria": "Fantasia",
+    "autor": "George R.R. Martin",
+    "capa": "tormenta_espadas.jpg",
+    "isbn": "9788595081607",
+    "preco": 69.90,
+    "sinopse": "O terceiro livro da série, com reviravoltas e batalhas épicas.",
+    "lancamento": "2000-08-08"
+  },
+  {
+    "titulo": "O Assassinato de Roger Ackroyd",
+    "categoria": "Mistério",
+    "autor": "Agatha Christie",
+    "capa": "roger_ackroyd.jpg",
+    "isbn": "9788522006867",
+    "preco": 37.90,
+    "sinopse": "O detetive Hercule Poirot investiga um assassinato em uma vila inglesa.",
+    "lancamento": "1926-01-01"
+  },
+  {
+    "titulo": "O Cão dos Baskervilles",
+    "categoria": "Mistério",
+    "autor": "Arthur Conan Doyle",
+    "capa": "cao_baskerville.jpg",
+    "isbn": "9788580130108",
+    "preco": 34.90,
+    "sinopse": "Sherlock Holmes investiga uma maldição que assola a família Baskerville.",
+    "lancamento": "1902-01-01"
+  },
+  {
+    "titulo": "O Mistério dos Diamantes",
+    "categoria": "Mistério",
+    "autor": "Wilkie Collins",
+    "capa": "diamantes.jpg",
+    "isbn": "9788540803006",
+    "preco": 32.50,
+    "sinopse": "Um roubo de diamantes envolve detetives e policiais na Londres vitoriana.",
+    "lancamento": "1868-01-01"
+  },
+  {
+    "titulo": "O Jogo da Amarelinha",
+    "categoria": "Mistério",
+    "autor": "Julio Cortázar",
+    "capa": "amarelinha.jpg",
+    "isbn": "9788535913680",
+    "preco": 45.00,
+    "sinopse": "Uma obra experimental que mistura romance, poesia e filosofia.",
+    "lancamento": "1963-01-01"
+  },
+  {
+    "titulo": "A Casa dos Espíritos",
+    "categoria": "Mistério",
+    "autor": "Isabel Allende",
+    "capa": "casa_espiritos.jpg",
+    "isbn": "9788532510110",
+    "preco": 42.90,
+    "sinopse": "Saga familiar com elementos de realismo mágico e mistério.",
+    "lancamento": "1982-01-01"
+  },
+  {
+    "titulo": "O Código Da Vinci",
+    "categoria": "Mistério",
+    "autor": "Dan Brown",
+    "capa": "codigo_da_vinci.jpg",
+    "isbn": "9788551003196",
+    "preco": 39.90,
+    "sinopse": "Um simbologista desvenda segredos ocultos em obras de arte e igrejas.",
+    "lancamento": "2003-03-18"
+  },
+  {
+    "titulo": "Anjos e Demônios",
+    "categoria": "Mistério",
+    "autor": "Dan Brown",
+    "capa": "anjos_demonios.jpg",
+    "isbn": "9788551003197",
+    "preco": 39.90,
+    "sinopse": "Robert Langdon investiga uma conspiração envolvendo os Illuminati.",
+    "lancamento": "2000-05-01"
+  },
+  {
+    "titulo": "Drácula",
+    "categoria": "Terror",
+    "autor": "Bram Stoker",
+    "capa": "dracula.jpg",
+    "isbn": "9788573264301",
+    "preco": 29.90,
+    "sinopse": "O clássico do terror gótico sobre o vampiro Conde Drácula.",
+    "lancamento": "1897-05-26"
+  },
+  {
+    "titulo": "Frankenstein",
+    "categoria": "Terror",
+    "autor": "Mary Shelley",
+    "capa": "frankenstein.jpg",
+    "isbn": "9788573260301",
+    "preco": 34.90,
+    "sinopse": "A história do cientista que cria vida e sua criatura monstruosa.",
+    "lancamento": "1818-01-01"
+  },
+  {
+    "titulo": "O Iluminado",
+    "categoria": "Terror",
+    "autor": "Stephen King",
+    "capa": "iluminado.jpg",
+    "isbn": "9788551003940",
+    "preco": 39.90,
+    "sinopse": "Uma família isolada em um hotel assombrado durante o inverno.",
+    "lancamento": "1977-01-01"
+  },
+  {
+    "titulo": "It - A Coisa",
+    "categoria": "Terror",
+    "autor": "Stephen King",
+    "capa": "it.jpg",
+    "isbn": "9788551003950",
+    "preco": 49.90,
+    "sinopse": "Um palhaço assassino aterroriza a cidade de Derry.",
+    "lancamento": "1986-01-01"
+  },
+  {
+    "titulo": "O Chamado de Cthulhu",
+    "categoria": "Terror",
+    "autor": "H.P. Lovecraft",
+    "capa": "cthulhu.jpg",
+    "isbn": "9788573265670",
+    "preco": 27.90,
+    "sinopse": "Os mistérios do deus cósmico Cthulhu e seus seguidores.",
+    "lancamento": "1928-01-01"
+  },
+  {
+    "titulo": "A Queda da Casa de Usher",
+    "categoria": "Terror",
+    "autor": "Edgar Allan Poe",
+    "capa": "usher.jpg",
+    "isbn": "9788573264310",
+    "preco": 24.90,
+    "sinopse": "Conto gótico sobre uma família amaldiçoada e sua mansão.",
+    "lancamento": "1839-01-01"
+  },
+  {
+    "titulo": "Carrie",
+    "categoria": "Terror",
+    "autor": "Stephen King",
+    "capa": "carrie.jpg",
+    "isbn": "9788551003960",
+    "preco": 29.90,
+    "sinopse": "Uma garota com poderes telecinéticos se vinga dos colegas que a humilharam.",
+    "lancamento": "1974-04-05"
+  },
+  {
+    "titulo": "A Ilha do Tesouro",
+    "categoria": "Aventura",
+    "autor": "Robert Louis Stevenson",
+    "capa": "ilha_tesouro.jpg",
+    "isbn": "9788573264320",
+    "preco": 29.90,
+    "sinopse": "A busca por um tesouro pirata escondido em uma ilha misteriosa.",
+    "lancamento": "1883-11-14"
+  },
+  {
+    "titulo": "Viagem ao Centro da Terra",
+    "categoria": "Aventura",
+    "autor": "Júlio Verne",
+    "capa": "centro_terra.jpg",
+    "isbn": "9788573264330",
+    "preco": 32.50,
+    "sinopse": "Uma expedição científica descobre mundos subterrâneos.",
+    "lancamento": "1864-01-01"
+  },
+  {
+    "titulo": "Vinte Mil Léguas Submarinas",
+    "categoria": "Aventura",
+    "autor": "Júlio Verne",
+    "capa": "vinte_mil.jpg",
+    "isbn": "9788573264340",
+    "preco": 34.90,
+    "sinopse": "A incrível viagem do submarino Náutilo sob os oceanos.",
+    "lancamento": "1869-01-01"
+  },
+  {
+    "titulo": "Robinson Crusoé",
+    "categoria": "Aventura",
+    "autor": "Daniel Defoe",
+    "capa": "robinson.jpg",
+    "isbn": "9788573264350",
+    "preco": 27.90,
+    "sinopse": "Um náufrago luta pela sobrevivência em uma ilha deserta.",
+    "lancamento": "1719-04-25"
+  },
+  {
+    "titulo": "As Aventuras de Huckleberry Finn",
+    "categoria": "Aventura",
+    "autor": "Mark Twain",
+    "capa": "huckleberry.jpg",
+    "isbn": "9788573264360",
+    "preco": 29.90,
+    "sinopse": "As aventuras de um menino e um escravo fugitivo no rio Mississippi.",
+    "lancamento": "1884-01-01"
+  },
+  {
+    "titulo": "Moby Dick",
+    "categoria": "Aventura",
+    "autor": "Herman Melville",
+    "capa": "moby_dick.jpg",
+    "isbn": "9788573264370",
+    "preco": 39.90,
+    "sinopse": "A obsessiva caça de um capitão à baleia branca.",
+    "lancamento": "1851-10-18"
+  },
+  {
+    "titulo": "O Grande Gatsby",
+    "categoria": "Drama",
+    "autor": "F. Scott Fitzgerald",
+    "capa": "great_gatsby.jpg",
+    "isbn": "9788573264390",
+    "preco": 32.90,
+    "sinopse": "A trágica história do milionário Jay Gatsby e seu amor perdido.",
+    "lancamento": "1925-04-10"
+  },
+  {
+    "titulo": "A Letra Escarlate",
+    "categoria": "Drama",
+    "autor": "Nathaniel Hawthorne",
+    "capa": "letra_escarlate.jpg",
+    "isbn": "9788573264400",
+    "preco": 27.90,
+    "sinopse": "Uma mulher condenada a usar a letra A no peito por adultério.",
+    "lancamento": "1850-01-01"
+  },
+  {
+    "titulo": "O Retrato de Dorian Gray",
+    "categoria": "Drama",
+    "autor": "Oscar Wilde",
+    "capa": "dorian_gray.jpg",
+    "isbn": "9788573264410",
+    "preco": 29.90,
+    "sinopse": "Um jovem que vende sua alma para manter a juventude eterna.",
+    "lancamento": "1890-01-01"
+  },
+  {
+    "titulo": "Tempos Difíceis",
+    "categoria": "Drama",
+    "autor": "Charles Dickens",
+    "capa": "tempos_dificeis.jpg",
+    "isbn": "9788573264420",
+    "preco": 34.90,
+    "sinopse": "Crítica social sobre o industrialismo e a educação na Inglaterra.",
+    "lancamento": "1854-01-01"
+  },
+  {
+    "titulo": "Pessoas Normais",
+    "categoria": "Drama",
+    "autor": "Sally Rooney",
+    "capa": "pessoas_normais.jpg",
+    "isbn": "9788573264520",
+    "preco": 38.90,
+    "sinopse": "A complexa relação entre Connell e Marianne ao longo dos anos.",
+    "lancamento": "2018-08-28"
+  },
+  {
+    "titulo": "A Redoma de Vidro",
+    "categoria": "Drama",
+    "autor": "Sylvia Plath",
+    "capa": "redoma_vidro.jpg",
+    "isbn": "9788573264522",
+    "preco": 29.90,
+    "sinopse": "O romance semi-autobiográfico sobre depressão e o caminho para a recuperação.",
+    "lancamento": "1963-01-01"
+  },
+  {
+    "titulo": "O Alienista",
+    "categoria": "Comédia",
+    "autor": "Machado de Assis",
+    "capa": "alienista.jpg",
+    "isbn": "9788573264440",
+    "preco": 24.90,
+    "sinopse": "Uma sátira sobre a loucura e a ciência em uma pequena cidade.",
+    "lancamento": "1882-01-01"
+  },
+  {
+    "titulo": "A Comédia dos Erros",
+    "categoria": "Comédia",
+    "autor": "William Shakespeare",
+    "capa": "comedia_erros.jpg",
+    "isbn": "9788573264450",
+    "preco": 29.90,
+    "sinopse": "Gêmeos idênticos causam confusão em uma comédia de enganos.",
+    "lancamento": "1594-01-01"
+  },
+  {
+    "titulo": "Muito Barulho por Nada",
+    "categoria": "Comédia",
+    "autor": "William Shakespeare",
+    "capa": "barulho_nada.jpg",
+    "isbn": "9788573264460",
+    "preco": 27.90,
+    "sinopse": "Uma comédia romântica de enganos e fofocas.",
+    "lancamento": "1598-01-01"
+  },
+  {
+    "titulo": "A Megera Domada",
+    "categoria": "Comédia",
+    "autor": "William Shakespeare",
+    "capa": "megera.jpg",
+    "isbn": "9788573264470",
+    "preco": 26.90,
+    "sinopse": "A comédia sobre o casamento e o domínio entre os gêneros.",
+    "lancamento": "1590-01-01"
+  },
+  {
+    "titulo": "Os Contos de Canterbury",
+    "categoria": "Comédia",
+    "autor": "Geoffrey Chaucer",
+    "capa": "canterbury.jpg",
+    "isbn": "9788573264480",
+    "preco": 32.90,
+    "sinopse": "Uma coleção de histórias contadas por peregrinos viajando juntos.",
+    "lancamento": "1387-01-01"
+  },
+  {
+    "titulo": "Dom Quixote",
+    "categoria": "Comédia",
+    "autor": "Miguel de Cervantes",
+    "capa": "quixote.jpg",
+    "isbn": "9788573264490",
+    "preco": 39.90,
+    "sinopse": "A história do cavaleiro que luta contra moinhos de vento.",
+    "lancamento": "1605-01-01"
+  },
+  {
+    "titulo": "Sapiens: Uma Breve História da Humanidade",
+    "categoria": "Histórico",
+    "autor": "Yuval Noah Harari",
+    "capa": "sapiens.jpg",
+    "isbn": "9788551003198",
+    "preco": 49.90,
+    "sinopse": "Uma jornada pela história da humanidade, desde a pré-história até os dias atuais.",
+    "lancamento": "2011-01-01"
+  },
+  {
+    "titulo": "Homo Deus: Uma Breve História do Amanhã",
+    "categoria": "Histórico",
+    "autor": "Yuval Noah Harari",
+    "capa": "homo_deus.jpg",
+    "isbn": "9788551003199",
+    "preco": 54.90,
+    "sinopse": "O que nos espera no futuro? A evolução do Homo sapiens para Homo deus.",
+    "lancamento": "2015-01-01"
+  },
+  {
+    "titulo": "A Bibliotecária de Auschwitz",
+    "categoria": "Histórico",
+    "autor": "Antonio Iturbe",
+    "capa": "bibliotecaria_auschwitz.jpg",
+    "isbn": "9788573264521",
+    "preco": 42.90,
+    "sinopse": "A história real de Dita Kraus, que escondeu livros no campo de concentração.",
+    "lancamento": "2012-01-01"
+  },
+  {
+    "titulo": "O Alquimista",
+    "categoria": "Filosofia",
+    "autor": "Paulo Coelho",
+    "capa": "alquimista.jpg",
+    "isbn": "9788573264501",
+    "preco": 29.90,
+    "sinopse": "A jornada de um pastor em busca de seu tesouro pessoal.",
+    "lancamento": "1988-01-01"
+  },
+  {
+    "titulo": "O Pequeno Príncipe",
+    "categoria": "Filosofia",
+    "autor": "Antoine de Saint-Exupéry",
+    "capa": "pequeno_principe.jpg",
+    "isbn": "9788573264502",
+    "preco": 19.90,
+    "sinopse": "Uma fábula sobre amizade, amor e o sentido da vida.",
+    "lancamento": "1943-04-06"
+  },
+  {
+    "titulo": "Meditações",
+    "categoria": "Filosofia",
+    "autor": "Marco Aurélio",
+    "capa": "meditacoes.jpg",
+    "isbn": "9788573264503",
+    "preco": 24.90,
+    "sinopse": "Os pensamentos do imperador romano Marco Aurélio sobre estoicismo.",
+    "lancamento": "0180-01-01"
+  },
+  {
+    "titulo": "Assim Falou Zaratustra",
+    "categoria": "Filosofia",
+    "autor": "Friedrich Nietzsche",
+    "capa": "zaratustra.jpg",
+    "isbn": "9788573264504",
+    "preco": 34.90,
+    "sinopse": "O filósofo Nietzsche apresenta suas ideias sobre o super-homem.",
+    "lancamento": "1883-01-01"
+  },
+  {
+    "titulo": "O Mundo de Sofia",
+    "categoria": "Filosofia",
+    "autor": "Jostein Gaarder",
+    "capa": "mundo_sofia.jpg",
+    "isbn": "9788573264505",
+    "preco": 39.90,
+    "sinopse": "Um romance que introduz a história da filosofia de forma envolvente.",
+    "lancamento": "1991-01-01"
+  },
+  {
+    "titulo": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "categoria": "Programação",
+    "autor": "Robert C. Martin",
+    "capa": "clean_code.jpg",
+    "isbn": "9788573264506",
+    "preco": 89.90,
+    "sinopse": "Princípios e práticas para escrever código limpo e de qualidade.",
+    "lancamento": "2008-08-01"
+  },
+  {
+    "titulo": "O Programador Pragmático",
+    "categoria": "Programação",
+    "autor": "Andrew Hunt",
+    "capa": "pragmatic_programmer.jpg",
+    "isbn": "9788573264507",
+    "preco": 79.90,
+    "sinopse": "Conselhos práticos para se tornar um programador mais eficiente.",
+    "lancamento": "1999-10-20"
+  },
+  {
+    "titulo": "Estruturas de Dados e Algoritmos com JavaScript",
+    "categoria": "Programação",
+    "autor": "Loiane Groner",
+    "capa": "estruturas_javascript.jpg",
+    "isbn": "9788573264508",
+    "preco": 69.90,
+    "sinopse": "Aprenda os fundamentos de algoritmos e estruturas de dados usando JavaScript.",
+    "lancamento": "2020-01-01"
+  },
+  {
+    "titulo": "Python para Análise de Dados",
+    "categoria": "Programação",
+    "autor": "Wes McKinney",
+    "capa": "python_dados.jpg",
+    "isbn": "9788573264509",
+    "preco": 74.90,
+    "sinopse": "Manipule, analise e visualize dados com Python e pandas.",
+    "lancamento": "2017-01-01"
+  },
+  {
+    "titulo": "Introdução à Inteligência Artificial",
+    "categoria": "Programação",
+    "autor": "Stuart Russell",
+    "capa": "ia_introducao.jpg",
+    "isbn": "9788573264510",
+    "preco": 64.90,
+    "sinopse": "Conceitos fundamentais de IA, desde redes neurais até aprendizado profundo.",
+    "lancamento": "2019-01-01"
+  },
+  {
+    "titulo": "O Poder do Hábito",
+    "categoria": "Autoajuda",
+    "autor": "Charles Duhigg",
+    "capa": "poder_habito.jpg",
+    "isbn": "9788573264511",
+    "preco": 34.90,
+    "sinopse": "Como os hábitos funcionam e como podemos transformá-los.",
+    "lancamento": "2012-01-01"
+  },
+  {
+    "titulo": "A Coragem de Não Agradar",
+    "categoria": "Autoajuda",
+    "autor": "Ichiro Kishimi",
+    "capa": "coragem_nao_agradar.jpg",
+    "isbn": "9788573264512",
+    "preco": 29.90,
+    "sinopse": "Uma abordagem sobre como viver de acordo com seus próprios valores.",
+    "lancamento": "2018-01-01"
+  },
+  {
+    "titulo": "O Milagre da Manhã",
+    "categoria": "Autoajuda",
+    "autor": "Hal Elrod",
+    "capa": "milagre_manha.jpg",
+    "isbn": "9788573264513",
+    "preco": 27.90,
+    "sinopse": "Rotinas matinais para transformar sua vida e alcançar seus objetivos.",
+    "lancamento": "2016-01-01"
+  },
+  {
+    "titulo": "Verity",
+    "categoria": "Suspense",
+    "autor": "Colleen Hoover",
+    "capa": "verity.jpg",
+    "isbn": "9788573264514",
+    "preco": 39.90,
+    "sinopse": "Um escritor é contratado para terminar a série de uma autora famosa, mas descobre segredos obscuros.",
+    "lancamento": "2018-12-10"
+  },
+  {
+    "titulo": "A Paciente Silenciosa",
+    "categoria": "Suspense",
+    "autor": "Alex Michaelides",
+    "capa": "paciente_silenciosa.jpg",
+    "isbn": "9788573264515",
+    "preco": 42.90,
+    "sinopse": "Uma pintora famosa mata o marido e nunca mais fala uma palavra.",
+    "lancamento": "2019-01-01"
+  },
+  {
+    "titulo": "O Conto da Aia",
+    "categoria": "Distopia",
+    "autor": "Margaret Atwood",
+    "capa": "conto_aia.jpg",
+    "isbn": "9788573264523",
+    "preco": 39.90,
+    "sinopse": "Em Gilead, um regime totalitário, as mulheres são subjugadas e usadas como reprodutoras.",
+    "lancamento": "1985-01-01"
+  },
+  {
+    "titulo": "Jogos Vorazes",
+    "categoria": "Distopia",
+    "autor": "Suzanne Collins",
+    "capa": "jogos_vorazes.jpg",
+    "isbn": "9788573264524",
+    "preco": 34.90,
+    "sinopse": "Em Panem, jovens são forçados a lutar até a morte em um reality show.",
+    "lancamento": "2008-09-14"
+  }
+]
