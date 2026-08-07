@@ -276,7 +276,11 @@
 
 @media (max-width: 640px) {
   .home-page {
-    padding: 0 var(--espaco-md) var(--espaco-lg);
+    padding: 0;
+  }
+
+  .adicionar-item {
+    display: none;
   }
 
   .hero-overlay {
