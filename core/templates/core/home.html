@@ -53,7 +53,7 @@
                 <p class="categoria-kicker">Coleção</p>
                 <h2 class="categoria-titulo">{{ categoria.nome }}</h2>
               </div>
-              <a href="#" class="categoria-link">Ver tudo</a>
+              <a href="{% url 'catalogo:buscar_livros' %}?q={{ categoria.nome }}" class="categoria-link">Ver tudo</a>
             </div>
 
             <div class="livros-line">
