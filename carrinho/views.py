@@ -11,8 +11,6 @@ def carrinho_view(request):
     items = Carrinho.objects.get_itens(usuario=request.user)
     subtotal_carrinho = Carrinho.objects.subtotal_carrinho(usuario=request.user)
 
-    print('SUBTOTAL DO CARRINHO:', subtotal_carrinho)
-
     context = {
         'items': items,
         'subtotal_carrinho': subtotal_carrinho,
