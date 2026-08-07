@@ -9,7 +9,7 @@ class Livro(models.Model):
     slug = models.SlugField(_("Slug"), blank=True, unique=True) # Versão do título formatada para ser usada na URL
     categoria = models.ManyToManyField("catalogo.Categoria", verbose_name=_("Categoria"), related_name='livros')
     autor = models.ForeignKey("catalogo.Autor", verbose_name=_("Autor"), on_delete=models.PROTECT)
-    capa = models.ImageField(_("Capa"), upload_to='capas/')
+    capa = models.URLField(_("Capa"), max_length=200)
     isbn = models.CharField(_("ISBN"), max_length=17, unique=True)
     preco = models.DecimalField(_("Preço"), max_digits=5, decimal_places=2)
     sinopse = models.TextField(_("Sinopse"))
