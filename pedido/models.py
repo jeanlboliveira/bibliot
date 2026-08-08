@@ -1,5 +1,4 @@
 from decimal import Decimal
-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -12,11 +11,19 @@ class Pedido(models.Model):
     )
 
     endereco = models.ForeignKey(
-        "pedido.EnderecoPedido",
+        "accounts.Endereco",
         on_delete=models.PROTECT,
     )
 
-    criado_em = models.DateTimeField(auto_now_add=True)
+    criado_em = models.DateTimeField(
+        _("Criado em"),
+        auto_now_add=True
+    )
+
+    updated_at = models.DateField(
+        _("Atualizado em"), 
+        auto_now=True
+    )
 
     class Status(models.TextChoices):
         AGUARDANDO = "AG", _("Aguardando pagamento")
@@ -35,6 +42,14 @@ class Pedido(models.Model):
     def total(self):
         return sum((item.subtotal for item in self.itens.all()), start=Decimal("0.00"))
 
+    class Meta:
+        verbose_name = _("Pedido")
+        verbose_name_plural = _('Pedidos')
+        ordering = ['-criado_em']
+        indexes = [
+            models.Index(fields=['usuario', '-criado_em'])
+        ]
+
     def __str__(self):
         return f"Pedido #{self.pk}"
 
@@ -44,16 +59,24 @@ class ItemPedido(models.Model):
         Pedido,
         on_delete=models.CASCADE,
         related_name="itens",
+        verbose_name=_('Pedido'),
     )
 
     livro = models.ForeignKey(
         "catalogo.Livro",
         on_delete=models.PROTECT,
+        verbose_name=_('Livro'),
     )
 
-    quantidade = models.PositiveIntegerField(default=1)
+    quantidade = models.PositiveIntegerField(
+        _('Quantidade'),
+        default=1,
+    )
+
+    
 
     preco_unitario = models.DecimalField(
+        _('Preço unitário'),
         max_digits=10,
         decimal_places=2,
     )
@@ -62,30 +85,35 @@ class ItemPedido(models.Model):
     def subtotal(self):
         return self.preco_unitario * self.quantidade
 
-    def __str__(self):
-        return self.livro.titulo
-
-
-class EnderecoPedido(models.Model):
-    """Model definition for EnderecoPedido."""
-
-    # TODO: Define fields here
-    cep = models.CharField(max_length=9)
-    estado = models.CharField(max_length=2)
-    cidade = models.CharField(max_length=50)
-    bairro = models.CharField(max_length=50)
-    rua = models.CharField(max_length=200)
-    numero = models.CharField(max_length=10)
-    complemento = models.CharField(max_length=100, blank=True)
-    referencia = models.CharField(max_length=200, blank=True)
-
+    
     class Meta:
-        """Meta definition for EnderecoPedido."""
-
-        verbose_name = 'EnderecoPedido'
-        verbose_name_plural = 'EnderecoPedidos'
+        verbose_name = _("Item do Pedido")
+        verbose_name_plural = _("Itens do Pedido")
 
     def __str__(self):
-        """Unicode representation of EnderecoPedido."""
-        return f"{self.rua}, {self.numero} - {self.cidade}/{self.estado}"
+        return f"{self.livro.titulo} × {self.quantidade}"
+
+
+# class EnderecoPedido(models.Model):
+#     """Model definition for EnderecoPedido."""
+
+#     # TODO: Define fields here
+#     cep = models.CharField(max_length=9)
+#     estado = models.CharField(max_length=2)
+#     cidade = models.CharField(max_length=50)
+#     bairro = models.CharField(max_length=50)
+#     rua = models.CharField(max_length=200)
+#     numero = models.CharField(max_length=10)
+#     complemento = models.CharField(max_length=100, blank=True)
+#     referencia = models.CharField(max_length=200, blank=True)
+
+#     class Meta:
+#         """Meta definition for EnderecoPedido."""
+
+#         verbose_name = 'EnderecoPedido'
+#         verbose_name_plural = 'EnderecoPedidos'
+
+#     def __str__(self):
+#         """Unicode representation of EnderecoPedido."""
+#         return f"{self.rua}, {self.numero} - {self.cidade}/{self.estado}"
 

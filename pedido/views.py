@@ -4,9 +4,8 @@ from django.db import transaction
 from carrinho.models import Carrinho
 from accounts.models import Endereco
 from .models import (
-  Pedido,
-  ItemPedido, 
-  EnderecoPedido
+    Pedido,
+    ItemPedido, 
 )
 
 
@@ -73,16 +72,7 @@ def fechar_pedido_view(request, endereco_id):
         usuario=usuario,
     )
 
-    endereco_pedido = EnderecoPedido.objects.create(
-        cep=endereco.cep,
-        estado=endereco.estado,
-        cidade=endereco.cidade,
-        bairro=endereco.bairro,
-        rua=endereco.rua,
-        numero=endereco.numero,
-        complemento=endereco.complemento,
-        referencia=endereco.referencia,
-    )
+    endereco_pedido = endereco
 
     pedido = Pedido.objects.create(
         usuario=usuario,
