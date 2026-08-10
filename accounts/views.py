@@ -35,13 +35,14 @@ def profile_view(request):
 
 @login_required
 def adicionar_endereco_view(request):
+    next_url = request.GET.get('next', 'home')
     if request.method == 'POST':
         form = EnderecoForm(request.POST)
         if form.is_valid():
             endereco = form.save(commit=False)
             endereco.usuario = request.user
             endereco.save()
-            return redirect('accounts:profile')
+            return redirect(next_url)
     else:
         form = EnderecoForm()
 

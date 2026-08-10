@@ -4,16 +4,6 @@
 
 {% block content %}
   <div class="home-page">
-    {% comment %} {% if banners %}
-      <div class="banners-container">
-        {% for banner in banners %}
-          <div class="banner">
-            <img src="{{ banner.img.url }}" alt="{{ banner.alt }}" />
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %} {% endcomment %}
-
     <section class="hero-panel" aria-label="Destaques da livraria">
       <div class="hero-media">
         <img src="{% static 'images/banner/banner.jpg' %}" alt="Banner editorial da livraria" />
@@ -69,7 +59,7 @@
                   </a>
 
                   <div data-livro-id="{{ livro.id }}" method="post">
-                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}">Adicionar ao Carrinho</button>
+                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}" data-autenticado="{ request.user.is_authenticated }">Adicionar ao Carrinho</button>
                   </div>
                 </article>
               {% endfor %}
@@ -101,7 +91,11 @@
     document.querySelector('.categorias-container').addEventListener('click', (event) => {
       const botao = event.target.closest('.adicionar-item')
       if (!botao) return
-      adicionarComDebouce(botao.dataset.url)
+      if (botao.dataset.autenticado) {
+        adicionarComDebouce(botao.dataset.url)
+      } else {
+        window.alert('Faça login para adicionar item ao carrinho')
+      }
     })
   </script>
 {% endblock %}

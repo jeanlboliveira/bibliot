@@ -25,18 +25,20 @@
         <form method="post" class="pedido-form" action="{% url 'pedido:confirmar_pedido' %}">
           {% csrf_token %}
 
-          <div class="field">
-            <label for="endereco">Endereço de entrega</label>
-            <select id="endereco" name="endereco" required>
-              {% for endereco in enderecos %}
-                <option value="{{ endereco.id }}">
-                  {{ endereco.nome_completo }} - {{ endereco.rua }}, {{ endereco.numero }} · {{ endereco.bairro }} · {{ endereco.cidade }}/{{ endereco.estado }}
-                </option>
-              {% empty %}
-                <option value="">Nenhum endereço cadastrado</option>
-              {% endfor %}
-            </select>
-          </div>
+          {% if enderecos %}
+            <div class="field">
+              <label for="endereco">Endereço de entrega</label>
+              <select id="endereco" name="endereco" required>
+                {% for endereco in enderecos %}
+                  <option value="{{ endereco.id }}">{{ endereco.nome_completo }} - {{ endereco.rua }}, {{ endereco.numero }} · {{ endereco.bairro }} · {{ endereco.cidade }}/{{ endereco.estado }}</option>
+                {% empty %}
+                  <option value="">Nenhum endereço cadastrado</option>
+                {% endfor %}
+              </select>
+            </div>
+
+              <a href="{% url 'accounts:adicionar_endereco' %}?next={{ request.path }}" class="btn-secondary">Adicionar endereço</a>
+          {% endif %}
 
           <div class="field">
             <label>Forma de pagamento</label>
@@ -85,9 +87,7 @@
           <strong>R$ {{ subtotal_carrinho|floatformat:2 }}</strong>
         </div>
 
-        <div class="summary-note">
-          Esta é uma confirmação fictícia. Ao confirmar, o pedido será criado e o carrinho será limpo.
-        </div>
+        <div class="summary-note">Esta é uma confirmação fictícia. Ao confirmar, o pedido será criado e o carrinho será limpo.</div>
       </aside>
     </div>
   </section>

@@ -29,7 +29,7 @@
       </div>
 
       <div class="profile-actions">
-        <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}">Adicionar endereço</a>
+        <a class="profile-link" href="{% url 'accounts:adicionar_endereco' %}?next={{ request.path }}">Adicionar endereço</a>
 
         <form action="{% url 'accounts:logout' %}" method="post">
           {% csrf_token %}
@@ -39,7 +39,7 @@
     </div>
 
     <div class="profile-grid">
-      <section class="profile-card profile-card--info">
+      <section class="profile-card profile-card--info ">
         <div class="profile-card__header">
           <h3>Dados da conta</h3>
         </div>
