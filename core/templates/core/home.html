@@ -59,7 +59,7 @@
                   </a>
 
                   <div data-livro-id="{{ livro.id }}" method="post">
-                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}" data-autenticado="{ request.user.is_authenticated }">Adicionar ao Carrinho</button>
+                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}" data-autenticado="{{ request.user.is_authenticated }}">Adicionar ao Carrinho</button>
                   </div>
                 </article>
               {% endfor %}
@@ -91,7 +91,8 @@
     document.querySelector('.categorias-container').addEventListener('click', (event) => {
       const botao = event.target.closest('.adicionar-item')
       if (!botao) return
-      if (botao.dataset.autenticado) {
+      if (botao.dataset.autenticado === 'true') {
+        console.log(botao.dataset.autenticado)
         adicionarComDebouce(botao.dataset.url)
       } else {
         window.alert('Faça login para adicionar item ao carrinho')
