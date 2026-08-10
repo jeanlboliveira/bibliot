@@ -4,16 +4,6 @@
 
 {% block content %}
   <div class="home-page">
-    {% comment %} {% if banners %}
-      <div class="banners-container">
-        {% for banner in banners %}
-          <div class="banner">
-            <img src="{{ banner.img.url }}" alt="{{ banner.alt }}" />
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %} {% endcomment %}
-
     <section class="hero-panel" aria-label="Destaques da livraria">
       <div class="hero-media">
         <img src="{% static 'images/banner/image.png' %}" alt="Banner editorial da livraria" />
