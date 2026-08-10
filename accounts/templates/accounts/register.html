@@ -26,6 +26,13 @@
             <span class="erro-campo">{{ form.email.errors.0 }}</span>
         {% endif %}
     </label>
+    <label for="telefone">
+        <span>Telefone:</span>
+        {{ form.telefone }}
+        {% if form.telefone.errors %}
+            <span class="erro-campo">{{ form.telefone.errors.0 }}</span>
+        {% endif %}
+    </label>
     <label for="password1">
         <span>Senha</span>
         {{ form.password1 }}
