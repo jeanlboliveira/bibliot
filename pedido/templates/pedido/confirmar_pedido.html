@@ -25,7 +25,6 @@
         <form method="post" class="pedido-form" action="{% url 'pedido:confirmar_pedido' %}">
           {% csrf_token %}
 
-          {% if enderecos %}
             <div class="field">
               <label for="endereco">Endereço de entrega</label>
               <select id="endereco" name="endereco" required>
@@ -38,7 +37,6 @@
             </div>
 
               <a href="{% url 'accounts:adicionar_endereco' %}?next={{ request.path }}" class="btn-secondary">Adicionar endereço</a>
-          {% endif %}
 
           <div class="field">
             <label>Forma de pagamento</label>

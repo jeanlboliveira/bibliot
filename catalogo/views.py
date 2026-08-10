@@ -1,10 +1,12 @@
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.http import HttpResponse
-from .models import Livro
-from lista_desejos.models import ListaDeDesejos
+from django.shortcuts import get_object_or_404, render
+
 from carrinho.models import Carrinho
+from lista_desejos.models import ListaDeDesejos
+
+from .models import Livro
+
 
 def livro_detail_view(request, slug):
     livro = get_object_or_404(Livro, slug=slug)
@@ -26,6 +28,7 @@ def livro_detail_view(request, slug):
         template_name='catalogo/livro_detail.html',
         context=context
     )
+
 
 def buscar_livros_view(request):
     query = request.GET.get('q', '').strip()
