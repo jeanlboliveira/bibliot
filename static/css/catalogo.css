@@ -124,3 +124,33 @@
   border: 1px solid var(--cor-secundaria);
   color: var(--cor-secundaria);
 }
+
+@media (max-width: 900px) {
+  .livro-detail {
+    padding: 1.5rem 1rem;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .livro-foto img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .livro-detail {
+    padding: 1rem 0;
+  }
+
+  .toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .livro-info .preco {
+    font-size: 1.3rem;
+  }
+}

@@ -20,7 +20,6 @@
   </head>
   <body>
     {% include 'fragments/_header.html' %}
-    {% include 'fragments/_navbar.html' %}
 
     <main>
       <section class="container">
@@ -41,25 +40,6 @@
     </main>
 
     {% include 'fragments/_footer.html' %}
-
-    <script>
-      let ultimoScroll = 0
-      const nav = document.querySelector('nav')
-      
-      window.addEventListener('scroll', () => {
-        const scrollAtual = window.scrollY
-      
-        if (scrollAtual > ultimoScroll && scrollAtual > 200) {
-          // descendo a página (e já passou de 200px, pra não esconder logo no topo)
-          nav.classList.add('nav-escondida')
-        } else {
-          // subindo a página
-          nav.classList.remove('nav-escondida')
-        }
-      
-        ultimoScroll = scrollAtual
-      })
-    </script>
 
     <script>
       const sugestoes = ['Seu próximo universo está aqui', 'Busque por ISBN', 'Que tal um "Harry Potter"?', 'Procure pelo nome do autor', 'Sua próxima leitura está a um clique', 'Já leu Machado de Assis?', 'Busque por gênero: romance, ficção, poesia...', 'Digite o título do livro', 'Descubra um novo mundo hoje', 'Que tal explorar os lançamentos?', 'Procurando um clássico ou uma novidade?', "Busque por 'Clarice Lispector'", 'Toda boa história começa com uma busca', 'Encontre seu próximo capítulo favorito', 'Digite e deixe a magia acontecer']

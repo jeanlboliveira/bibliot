@@ -4,19 +4,9 @@
 
 {% block content %}
   <div class="home-page">
-    {% comment %} {% if banners %}
-      <div class="banners-container">
-        {% for banner in banners %}
-          <div class="banner">
-            <img src="{{ banner.img.url }}" alt="{{ banner.alt }}" />
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %} {% endcomment %}
-
     <section class="hero-panel" aria-label="Destaques da livraria">
       <div class="hero-media">
-        <img src="{% static 'images/banner/image.png' %}" alt="Banner editorial da livraria" />
+        <img src="{% static 'images/banner/banner.jpg' %}" alt="Banner editorial da livraria" />
         <div class="hero-overlay">
           <span class="hero-pill">Seleção editorial</span>
           <h1>Encontre a próxima leitura que merece espaço na sua rotina.</h1>
@@ -53,14 +43,14 @@
                 <p class="categoria-kicker">Coleção</p>
                 <h2 class="categoria-titulo">{{ categoria.nome }}</h2>
               </div>
-              <a href="#" class="categoria-link">Ver tudo</a>
+              <a href="{% url 'catalogo:buscar_livros' %}?q={{ categoria.nome }}" class="categoria-link">Ver tudo</a>
             </div>
 
             <div class="livros-line">
               {% for livro in categoria.livros.all %}
                 <article class="livro-card">
                   <a href="{% url 'catalogo:livro_detail' livro.slug %}">
-                    <img src="{{ livro.capa.url }}" alt="capa do livro '{{ livro.titulo }}'" />
+                    <img src="{{ livro.capa }}" alt="capa do livro '{{ livro.titulo }}'" />
                     <div class="livro-info">
                       <span class="titulo">{{ livro.titulo }}</span>
                       <span class="autor">{{ livro.autor.nome }}</span>
@@ -69,7 +59,7 @@
                   </a>
 
                   <div data-livro-id="{{ livro.id }}" method="post">
-                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}">Adicionar ao Carrinho</button>
+                    <button type="submit" class="adicionar-item" data-url="{% url 'carrinho:adicionar_item' livro.id %}" data-autenticado="{{ request.user.is_authenticated }}">Adicionar ao Carrinho</button>
                   </div>
                 </article>
               {% endfor %}
@@ -101,7 +91,12 @@
     document.querySelector('.categorias-container').addEventListener('click', (event) => {
       const botao = event.target.closest('.adicionar-item')
       if (!botao) return
-      adicionarComDebouce(botao.dataset.url)
+      if (botao.dataset.autenticado === 'true') {
+        console.log(botao.dataset.autenticado)
+        adicionarComDebouce(botao.dataset.url)
+      } else {
+        window.alert('Faça login para adicionar item ao carrinho')
+      }
     })
   </script>
 {% endblock %}

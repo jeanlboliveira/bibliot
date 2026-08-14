@@ -13,7 +13,7 @@
         {% for livro in livros %}
           <article class="livro-card">
             <a href="{% url 'catalogo:livro_detail' livro.slug %}">
-              <img src="{{ livro.capa.url }}" alt="capa do livro '{{ livro.titulo }}'" />
+              <img src="{{ livro.capa }}" alt="capa do livro '{{ livro.titulo }}'" />
               <div class="livro-info">
                 <span class="titulo">{{ livro.titulo }}</span>
                 <span class="autor">{{ livro.autor.nome }}</span>

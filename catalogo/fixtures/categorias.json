@@ -1,0 +1,18 @@
+[
+  {"nome": "Romance", "descricao": "Romances de amor e relacionamentos", "ordem": 1},
+  {"nome": "Ficção Científica", "descricao": "Histórias futuristas e tecnológicas", "ordem": 2},
+  {"nome": "Fantasia", "descricao": "Mundos mágicos e criaturas fantásticas", "ordem": 3},
+  {"nome": "Mistério", "descricao": "Suspense e investigação criminal", "ordem": 4},
+  {"nome": "Terror", "descricao": "Histórias assustadoras de arrepiar", "ordem": 5},
+  {"nome": "Aventura", "descricao": "Histórias de viagens e exploração", "ordem": 6},
+  {"nome": "Drama", "descricao": "Histórias com forte carga emocional", "ordem": 7},
+  {"nome": "Comédia", "descricao": "Histórias humorísticas e divertidas", "ordem": 8},
+  {"nome": "Histórico", "descricao": "Romances baseados em eventos históricos", "ordem": 9},
+  {"nome": "Poesia", "descricao": "Obras poéticas e versos", "ordem": 10},
+  {"nome": "Filosofia", "descricao": "Obras de pensamento e reflexão", "ordem": 11},
+  {"nome": "Biografia", "descricao": "Histórias de vida de pessoas notáveis", "ordem": 12},
+  {"nome": "Programação", "descricao": "Livros sobre desenvolvimento de software e tecnologia", "ordem": 13},
+  {"nome": "Autoajuda", "descricao": "Livros de desenvolvimento pessoal e motivação", "ordem": 14},
+  {"nome": "Suspense", "descricao": "Histórias de tensão e surpresa", "ordem": 15},
+  {"nome": "Distopia", "descricao": "Sociedades futuristas opressivas", "ordem": 16}
+]

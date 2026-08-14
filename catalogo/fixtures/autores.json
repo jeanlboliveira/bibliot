@@ -1,0 +1,450 @@
+[
+  {
+    "nome": "Machado de Assis",
+    "descricao": "Autor muito influente no Brasil",
+    "nascimento": "1839-06-21",
+    "morte": "1908-09-29",
+    "foto": null
+  },
+  {
+    "nome": "Jorge Amado",
+    "descricao": "Um dos maiores romancistas brasileiros",
+    "nascimento": "1912-08-10",
+    "morte": "2001-08-06",
+    "foto": null
+  },
+  {
+    "nome": "Clarice Lispector",
+    "descricao": "Escritora e jornalista, considerada uma das mais importantes do século XX",
+    "nascimento": "1920-12-10",
+    "morte": "1977-12-09",
+    "foto": null
+  },
+  {
+    "nome": "Gabriel García Márquez",
+    "descricao": "Escritor colombiano, ganhador do Prêmio Nobel de Literatura",
+    "nascimento": "1927-03-06",
+    "morte": "2014-04-17",
+    "foto": null
+  },
+  {
+    "nome": "Jane Austen",
+    "descricao": "Escritora inglesa, conhecida por seus romances de costumes",
+    "nascimento": "1775-12-16",
+    "morte": "1817-07-18",
+    "foto": null
+  },
+  {
+    "nome": "J.K. Rowling",
+    "descricao": "Autora britânica da série Harry Potter",
+    "nascimento": "1965-07-31",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "George R.R. Martin",
+    "descricao": "Escritor americano de fantasia épica",
+    "nascimento": "1948-09-20",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Stephen King",
+    "descricao": "Mestre do terror e suspense",
+    "nascimento": "1947-09-21",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Dan Brown",
+    "descricao": "Escritor americano de thrillers",
+    "nascimento": "1964-06-22",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Antonio Iturbe",
+    "descricao": "Escritor e jornalista espanhol, autor de A Bibliotecária de Auschwitz",
+    "nascimento": "1967-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Yuval Noah Harari",
+    "descricao": "Historiador e escritor israelense",
+    "nascimento": "1976-02-24",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Robert C. Martin",
+    "descricao": "Engenheiro de software e autor de livros de programação",
+    "nascimento": "1952-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Jenny Han",
+    "descricao": "Escritora americana de romances jovens adultos",
+    "nascimento": "1980-09-03",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Emily Henry",
+    "descricao": "Escritora americana de comédias românticas",
+    "nascimento": "1985-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Emily Brontë",
+    "descricao": "Escritora inglesa, autora de O Morro dos Ventos Uivantes",
+    "nascimento": "1818-07-30",
+    "morte": "1848-12-19",
+    "foto": null
+  },
+  {
+    "nome": "Paulo Coelho",
+    "descricao": "Escritor brasileiro de autoajuda e ficção",
+    "nascimento": "1947-08-24",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Aluísio Azevedo",
+    "descricao": "Escritor brasileiro, autor de O Cortiço",
+    "nascimento": "1857-04-14",
+    "morte": "1913-01-21",
+    "foto": null
+  },
+  {
+    "nome": "William Gibson",
+    "descricao": "Escritor americano-canadense, pai do cyberpunk",
+    "nascimento": "1948-03-17",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "George Orwell",
+    "descricao": "Escritor e jornalista britânico",
+    "nascimento": "1903-06-25",
+    "morte": "1950-01-21",
+    "foto": null
+  },
+  {
+    "nome": "Ray Bradbury",
+    "descricao": "Escritor americano de ficção científica",
+    "nascimento": "1920-08-22",
+    "morte": "2012-06-05",
+    "foto": null
+  },
+  {
+    "nome": "Aldous Huxley",
+    "descricao": "Escritor inglês, autor de Admirável Mundo Novo",
+    "nascimento": "1894-07-26",
+    "morte": "1963-11-22",
+    "foto": null
+  },
+  {
+    "nome": "Arthur C. Clarke",
+    "descricao": "Escritor e inventor britânico",
+    "nascimento": "1917-12-16",
+    "morte": "2008-03-19",
+    "foto": null
+  },
+  {
+    "nome": "Philip K. Dick",
+    "descricao": "Escritor americano de ficção científica",
+    "nascimento": "1928-12-16",
+    "morte": "1982-03-02",
+    "foto": null
+  },
+  {
+    "nome": "Isaac Asimov",
+    "descricao": "Escritor e bioquímico americano",
+    "nascimento": "1920-01-02",
+    "morte": "1992-04-06",
+    "foto": null
+  },
+  {
+    "nome": "Frank Herbert",
+    "descricao": "Escritor americano de ficção científica",
+    "nascimento": "1920-10-08",
+    "morte": "1986-02-11",
+    "foto": null
+  },
+  {
+    "nome": "J.R.R. Tolkien",
+    "descricao": "Escritor e filólogo britânico",
+    "nascimento": "1892-01-03",
+    "morte": "1973-09-02",
+    "foto": null
+  },
+  {
+    "nome": "Agatha Christie",
+    "descricao": "Escritora britânica de mistério",
+    "nascimento": "1890-09-15",
+    "morte": "1976-01-12",
+    "foto": null
+  },
+  {
+    "nome": "Arthur Conan Doyle",
+    "descricao": "Escritor britânico, criador de Sherlock Holmes",
+    "nascimento": "1859-05-22",
+    "morte": "1930-07-07",
+    "foto": null
+  },
+  {
+    "nome": "Wilkie Collins",
+    "descricao": "Escritor inglês, precursor do romance policial",
+    "nascimento": "1824-01-08",
+    "morte": "1889-09-23",
+    "foto": null
+  },
+  {
+    "nome": "Julio Cortázar",
+    "descricao": "Escritor argentino",
+    "nascimento": "1914-08-26",
+    "morte": "1984-02-12",
+    "foto": null
+  },
+  {
+    "nome": "Isabel Allende",
+    "descricao": "Escritora chilena",
+    "nascimento": "1942-08-02",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Bram Stoker",
+    "descricao": "Escritor irlandês, autor de Drácula",
+    "nascimento": "1847-11-08",
+    "morte": "1912-04-20",
+    "foto": null
+  },
+  {
+    "nome": "Mary Shelley",
+    "descricao": "Escritora inglesa, autora de Frankenstein",
+    "nascimento": "1797-08-30",
+    "morte": "1851-02-01",
+    "foto": null
+  },
+  {
+    "nome": "H.P. Lovecraft",
+    "descricao": "Escritor americano de terror cósmico",
+    "nascimento": "1890-08-20",
+    "morte": "1937-03-15",
+    "foto": null
+  },
+  {
+    "nome": "Edgar Allan Poe",
+    "descricao": "Escritor americano de contos góticos",
+    "nascimento": "1809-01-19",
+    "morte": "1849-10-07",
+    "foto": null
+  },
+  {
+    "nome": "Robert Louis Stevenson",
+    "descricao": "Escritor britânico",
+    "nascimento": "1850-11-13",
+    "morte": "1894-12-03",
+    "foto": null
+  },
+  {
+    "nome": "Júlio Verne",
+    "descricao": "Escritor francês, pioneiro da ficção científica",
+    "nascimento": "1828-02-08",
+    "morte": "1905-03-24",
+    "foto": null
+  },
+  {
+    "nome": "Daniel Defoe",
+    "descricao": "Escritor inglês",
+    "nascimento": "1660-09-13",
+    "morte": "1731-04-24",
+    "foto": null
+  },
+  {
+    "nome": "Mark Twain",
+    "descricao": "Escritor americano",
+    "nascimento": "1835-11-30",
+    "morte": "1910-04-21",
+    "foto": null
+  },
+  {
+    "nome": "Herman Melville",
+    "descricao": "Escritor americano",
+    "nascimento": "1819-08-01",
+    "morte": "1891-09-28",
+    "foto": null
+  },
+  {
+    "nome": "F. Scott Fitzgerald",
+    "descricao": "Escritor americano",
+    "nascimento": "1896-09-24",
+    "morte": "1940-12-21",
+    "foto": null
+  },
+  {
+    "nome": "Nathaniel Hawthorne",
+    "descricao": "Escritor americano",
+    "nascimento": "1804-07-04",
+    "morte": "1864-05-19",
+    "foto": null
+  },
+  {
+    "nome": "Oscar Wilde",
+    "descricao": "Escritor irlandês",
+    "nascimento": "1854-10-16",
+    "morte": "1900-11-30",
+    "foto": null
+  },
+  {
+    "nome": "Charles Dickens",
+    "descricao": "Escritor inglês",
+    "nascimento": "1812-02-07",
+    "morte": "1870-06-09",
+    "foto": null
+  },
+  {
+    "nome": "William Shakespeare",
+    "descricao": "Dramaturgo e poeta inglês",
+    "nascimento": "1564-04-26",
+    "morte": "1616-04-23",
+    "foto": null
+  },
+  {
+    "nome": "Geoffrey Chaucer",
+    "descricao": "Poeta inglês",
+    "nascimento": "1343-01-01",
+    "morte": "1400-10-25",
+    "foto": null
+  },
+  {
+    "nome": "Miguel de Cervantes",
+    "descricao": "Escritor espanhol",
+    "nascimento": "1547-09-29",
+    "morte": "1616-04-22",
+    "foto": null
+  },
+  {
+    "nome": "Antoine de Saint-Exupéry",
+    "descricao": "Escritor e aviador francês",
+    "nascimento": "1900-06-29",
+    "morte": "1944-07-31",
+    "foto": null
+  },
+  {
+    "nome": "Marco Aurélio",
+    "descricao": "Imperador romano e filósofo estoico",
+    "nascimento": "0121-04-26",
+    "morte": "0180-03-17",
+    "foto": null
+  },
+  {
+    "nome": "Friedrich Nietzsche",
+    "descricao": "Filósofo alemão",
+    "nascimento": "1844-10-15",
+    "morte": "1900-08-25",
+    "foto": null
+  },
+  {
+    "nome": "Jostein Gaarder",
+    "descricao": "Escritor norueguês",
+    "nascimento": "1952-08-08",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Colleen Hoover",
+    "descricao": "Escritora americana de romance contemporâneo",
+    "nascimento": "1979-12-11",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Sally Rooney",
+    "descricao": "Escritora irlandesa",
+    "nascimento": "1991-02-20",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Sylvia Plath",
+    "descricao": "Poetisa e romancista americana",
+    "nascimento": "1932-10-27",
+    "morte": "1963-02-11",
+    "foto": null
+  },
+  {
+    "nome": "Margaret Atwood",
+    "descricao": "Escritora canadense",
+    "nascimento": "1939-11-18",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Suzanne Collins",
+    "descricao": "Escritora americana",
+    "nascimento": "1962-08-10",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Andrew Hunt",
+    "descricao": "Co-autor do livro O Programador Pragmático",
+    "nascimento": "1963-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Loiane Groner",
+    "descricao": "Autora brasileira de livros de programação JavaScript",
+    "nascimento": "1985-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Wes McKinney",
+    "descricao": "Criador da biblioteca pandas para Python",
+    "nascimento": "1985-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Stuart Russell",
+    "descricao": "Professor de ciência da computação, autor de Inteligência Artificial",
+    "nascimento": "1962-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Charles Duhigg",
+    "descricao": "Jornalista americano, autor de O Poder do Hábito",
+    "nascimento": "1974-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Ichiro Kishimi",
+    "descricao": "Filósofo japonês, co-autor de A Coragem de Não Agradar",
+    "nascimento": "1956-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Hal Elrod",
+    "descricao": "Autor americano de autoajuda, criador do 'Milagre da Manhã'",
+    "nascimento": "1979-01-01",
+    "morte": null,
+    "foto": null
+  },
+  {
+    "nome": "Alex Michaelides",
+    "descricao": "Escritor cipriota-britânico, autor de A Paciente Silenciosa",
+    "nascimento": "1977-01-01",
+    "morte": null,
+    "foto": null
+  }
+]

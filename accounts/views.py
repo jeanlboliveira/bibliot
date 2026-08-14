@@ -26,19 +26,23 @@ def profile_view(request):
     return render(
         request=request,
         template_name='accounts/profile.html',
-        context={'enderecos': request.user.enderecos.all()}
+        context={
+            'enderecos': request.user.enderecos.all(),
+            'pedidos': request.user.pedidos.select_related('endereco').prefetch_related('itens__livro').order_by('-criado_em')
+        }
     )
 
 
 @login_required
 def adicionar_endereco_view(request):
+    next_url = request.GET.get('next', 'home')
     if request.method == 'POST':
         form = EnderecoForm(request.POST)
         if form.is_valid():
             endereco = form.save(commit=False)
             endereco.usuario = request.user
             endereco.save()
-            return redirect('accounts:profile')
+            return redirect(next_url)
     else:
         form = EnderecoForm()
 

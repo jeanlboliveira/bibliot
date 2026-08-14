@@ -21,6 +21,7 @@
 
     <form method="post" class="address-form">
       {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next_url }}">
 
       <div class="address-form__grid">
         <div class="form-field">

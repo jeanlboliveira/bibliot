@@ -1,8 +1,11 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import ListaDeDesejos
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404, render
+
 from catalogo.models import Livro
+
+from .models import ListaDeDesejos
+
 
 # Create your views here.
 @login_required
@@ -25,7 +28,7 @@ def toggle_view(request, livro_id):
         usuario = request.user
         livro = get_object_or_404(Livro, id=livro_id)
 
-        ListaDeDesejos.objects.adicionar_item(usuario=usuario, livro=livro)
+        ListaDeDesejos.objects.adicionar_ou_remover_item(usuario=usuario, livro=livro)
 
         return JsonResponse({
             'quantidade_total_wishlist': ListaDeDesejos.objects.filter(usuario=usuario).count()

@@ -1,14 +1,26 @@
 <footer>
   <div class="footer-content">
-    <div class="newsletter">
-      <h3>Fique por dentro das novidades</h3>
-      <p>Receba lançamentos, promoções e recomendações direto no seu e-mail.</p>
+    <div class="footer-top">
+      <div class="newsletter">
+        <h3>Fique por dentro das novidades</h3>
+        <p>Receba lançamentos, promoções e recomendações direto no seu e-mail.</p>
 
-      <form action="#" method="post" class="newsletter-form">
-        {% csrf_token %}
-        <input type="email" name="newsletter-email" placeholder="Seu e-mail" required />
-        <button type="submit">Inscrever-se</button>
-      </form>
+        <form action="#" method="post" class="newsletter-form">
+          {% csrf_token %}
+          <input type="email" name="newsletter-email" placeholder="Seu e-mail" required />
+          <button type="submit">Inscrever-se</button>
+        </form>
+      </div>
+
+      <div class="footer-links">
+        <h4>Mapa do site</h4>
+        <ul>
+          <li><a href="{% url 'core:home' %}">Início</a></li>
+          <li><a href="#">Catálogo</a></li>
+          <li><a href="{% url 'carrinho:carrinho' %}">Carrinho</a></li>
+          <li><a href="{% url 'accounts:profile' %}">Minha conta</a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="footer-bottom">

@@ -23,7 +23,7 @@
       <div class="wishlist-grid">
         {% for item in items %}
           <article class="wishlist-card">
-            <a class="wishlist-cover" href="{% url 'catalogo:livro_detail' item.item.slug %}" aria-label="Ver detalhes de {{ item.item.titulo }}"><img src="{{ item.item.capa.url }}" alt="Capa do livro {{ item.item.titulo }}" /></a>
+            <a class="wishlist-cover" href="{% url 'catalogo:livro_detail' item.item.slug %}" aria-label="Ver detalhes de {{ item.item.titulo }}"><img src="{{ item.item.capa }}" alt="Capa do livro {{ item.item.titulo }}" /></a>
 
             <div class="wishlist-content">
               <div class="wishlist-meta">
